@@ -1,6 +1,7 @@
 import React from 'react';
 import './css/AboutMe.css';
 import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
 
 // components
 
@@ -11,6 +12,21 @@ import useDocumentTitle from '../hooks/useDocumentTitle'
 import mtImage from '../assets/mt.png'
 import githubLogo from '../assets/github-circle-svgrepo-com.svg'
 import linkedInLogo from '../assets/linkedin-svgrepo-com.svg'
+import aboutmeContent from '../data/json/aboutme.json'
+
+const EmphasizeText = ({ text, emphasize }) => {
+  // Create a regular expression that matches whole words only
+  const regex = new RegExp(`\\b(${emphasize.join('|')})\\b`, 'gi');
+  const parts = text.split(regex);
+  return (
+    <>
+      {parts.map((part, index) =>
+        emphasize.includes(part) ? <span key={index} className="highlight">{part}</span> : part
+      )}
+    </>
+  );
+};
+
 
 function AboutMe() {
   useDocumentTitle('Tish');
@@ -41,7 +57,19 @@ function AboutMe() {
             </Card>
           </div>
           <div className='aboutme-info'>
-            <p>Some text</p>
+            <div className='content-container'>
+              <div className="text-container">
+                <div className='greeting'>{aboutmeContent.greeting}</div>
+                <div className='intro'>{aboutmeContent.introduction}</div>
+                <div className='bio'>
+                  <EmphasizeText text={aboutmeContent.bio} emphasize={["Python", "Java", "JavaScript", "Vue", "React", "Florida Institute of Technology"]}/>
+                </div>
+              </div>
+              <div className="button-container">
+                  <Button variant='primary'>Resume</Button>
+                  <Button variant='secondary'>Projects</Button>
+              </div>
+            </div>
           </div>
         </div>
       </div>

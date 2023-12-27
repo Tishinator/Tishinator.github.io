@@ -38,9 +38,10 @@
   background-color: rgb(255, 255, 255);
   display: flex;
   align-items: center; /* Centers content vertically */
-  justify-content: center; /* Centers content horizontally */
+  justify-content: center; 
   padding: 10px; /* Optional padding for content */
 }
+
 .background {
   position: fixed;
   top: 0;
@@ -50,4 +51,35 @@
   height: 100vh;
   z-index: -1;
   box-shadow: 0 4px 8px 0 #8d9aa7;
+}
+
+.aboutme-info .text-container {
+  color: #092d52;
+}
+
+.aboutme-info .text-container .greeting {
+  text-align: left;
+  font-size: 3rem;
+  font-weight: bold;
+  padding-left: 20px;
+}
+
+.aboutme-info .text-container .intro {
+  text-align: center;
+  font-size: 1.2rem;
+  padding-left: 20px;
+}
+
+.aboutme-info .text-container .bio {
+  text-align: justify;
+  margin: 20px;
+}
+
+.highlight {
+  font-weight: bold;
+  color: #092d52;
+}
+
+.button-container Button{
+  margin: 10px;
 }
