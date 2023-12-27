@@ -5,6 +5,8 @@ import './css/Header.css';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar'
 
+import siteImage from "../assets/richard.png"
+
 function Header() {
   
   return (
@@ -13,7 +15,7 @@ function Header() {
           <Navbar.Brand href="#home">
             <img
               alt=""
-              src="/assets/richard.png"
+              src={siteImage}
               width="30"
               height="30"
               className="d-inline-block align-top"

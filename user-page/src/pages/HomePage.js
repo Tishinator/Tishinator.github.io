@@ -11,9 +11,12 @@ function HomePage() {
   useDocumentTitle('Tish');
   
   return (
-    <div className="homepage">
+    
+    <div>
       <Header />
-      <h1>Welcome to My Homepage</h1>
+      <div className="homepage">
+        <h1>Welcome to My Homepage</h1>
+      </div>
       {/* Additional content will go here */}
     </div>
   );
