@@ -1,0 +1,53 @@
+.aboutme {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 90vh;
+  padding-bottom: 250px;
+  
+}
+
+.card{
+  border: none;
+  box-shadow: 5px 4px 5px 0px #000000;
+}
+
+.card-img-top{
+  border-radius: 0;
+}
+
+.aboutme-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch; /* Ensures that children stretch to fill the container */
+  gap: 0; /* Removes any space between the elements */
+  width: 50%;
+  box-shadow: 0 1px 8px 0 #000000;
+}
+
+.aboutme-card {
+  flex: 0 0 18rem; /* Fixed width for the card */
+  display: flex;
+  flex-direction: column; /* Stack the Card elements vertically */
+  
+}
+
+.aboutme-info {
+  flex-grow: 1; /* Takes up remaining space */
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center; /* Centers content vertically */
+  justify-content: center; /* Centers content horizontally */
+  padding: 10px; /* Optional padding for content */
+}
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #a8b3bea4;
+  width: 30%;
+  height: 100vh;
+  z-index: -1;
+  box-shadow: 0 4px 8px 0 #8d9aa7;
+}

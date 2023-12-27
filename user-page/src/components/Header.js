@@ -15,9 +15,9 @@ const Header = () => {
                     </div>
                 </Col>
                 <Col md={6}>
-                    <Nav className="justify-content-end">
+                    <Nav className="justify-content-end" variant='underline' defaultActiveKey="about">
                         <Nav.Item>
-                            <Nav.Link href="#about" className="text-light">About Me</Nav.Link>
+                            <Nav.Link eventKey='about' to="/about" className="text-light">About Me</Nav.Link>
                         </Nav.Item>
                         <Nav.Item>
                             <Nav.Link href="#resume" className="text-light">Resume</Nav.Link>
