@@ -1,0 +1,40 @@
+/* Header.css */
+.bg-dark {
+    background-color: #092d52 !important; /* Example background color */
+    box-shadow: 0 4px 8px 0 #092d52;
+}
+
+.name-occupation-wrapper {
+    display: flex; /* Enables flexbox layout */
+    align-items: center; /* Aligns items vertically in the center */
+    gap: 10px; /* Adds space between items */
+}
+
+.vert-separator {
+    height: 20px; /* Adjust the height as needed */
+    width: 1px; /* Thin vertical line */
+    background-color: #fff; /* White color for the separator */
+    margin: 0 10px; /* Margin to add space around the separator */
+}
+
+.name, .occupation {
+    margin: 0; /* Removes default margins */
+    font-size: 1rem; /* Adjust font size as needed */
+}
+
+/* Adjustments for Nav items */
+.text-light {
+    color: #fff !important; /* Ensures text is light colored */
+}
+
+/* Additional styles for Nav */
+.nav-link {
+    text-decoration: none; /* Removes underline from links */
+    color: inherit; /* Inherits color from parent */
+    padding: 0.5rem 1rem; /* Adjusts padding for better spacing */
+}
+
+.name{
+    font-weight: bold;
+    font-size: 1.2rem;
+}

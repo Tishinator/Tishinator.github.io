@@ -1,5 +1,6 @@
 import React from 'react';
 import './css/HomePage.css';
+import Alert from 'react-bootstrap/Alert';
 
 // components
 import Header from '../components/Header';
@@ -15,7 +16,9 @@ function HomePage() {
     <div>
       <Header />
       <div className="homepage">
-        <h1>Welcome to My Homepage</h1>
+        <Alert key='warning' variant='warning'>
+          Site under construction. Please mind the mess
+        </Alert>
       </div>
       {/* Additional content will go here */}
     </div>
