@@ -1,0 +1,33 @@
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #a8b3bea4;
+    width: 30%;
+    height: 100vh;
+    z-index: -1;
+    box-shadow: 0 4px 8px 0 #000000;
+  }
+
+.page-container{
+    display: flex;
+}
+
+.leftPanel{
+    flex: 1;
+    position: fixed;
+    width: 300px;
+    height: 100vh;
+    margin: 100px;
+}
+
+.rightPanel{
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+    margin-left: 300px; /* same as the width of the fixed section */
+    height: 100vh; /* full viewport height */
+    margin: 100px;
+    margin-left: 25%;
+    overflow: auto;
+}

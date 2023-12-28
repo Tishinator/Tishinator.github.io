@@ -1,4 +1,9 @@
 /* Header.css */
+.header {
+    position: fixed;
+    width: 100%;
+}
+
 .bg-dark {
     background-color: #092d52 !important; /* Example background color */
     box-shadow: 0 4px 8px 0 #092d52;
