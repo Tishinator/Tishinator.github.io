@@ -1,13 +1,15 @@
 import React from 'react';
 import education from '../data/education.json'
 import './css/Education.css'
+import { FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import { faGraduationCap } from '@fortawesome/free-solid-svg-icons';
 
 const Education = () => {
     return (
         <div className="education-section">
             <div className="education-card">
                 <div className="education-header">
-                    <span>Education</span>
+                <FontAwesomeIcon icon={faGraduationCap} /> <span>Education</span>
                 </div>
                 <div className="education-body">
                     <div className="education-info">

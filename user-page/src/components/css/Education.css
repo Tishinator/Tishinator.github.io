@@ -1,6 +1,6 @@
 .education-section {
     margin-top: 20px;
-    width: 50%;
+    width: 100%;
     align-self: start;
 }
 
@@ -11,7 +11,7 @@
     background-repeat: no-repeat;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgb(0, 0, 0);
-    max-width: 600px;
+    /* max-width: 600px; */
     /* margin: auto; */
     overflow: hidden;
     position: relative; /* For positioning the gradient overlay */
