@@ -34,6 +34,12 @@
     position: relative;
 }
 
+.skillDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}
+
 @media (max-width: 600px) {
     .leftPanel, .rightPanel {
         flex-basis: 100%;

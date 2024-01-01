@@ -3,8 +3,9 @@ import './css/Home.css'
 import UserCard from '../components/UserCard';
 import AboutMe from '../components/AboutMe';
 import Education from '../components/Education';
-import Skills from '../components/Skills';
+import ProgrammingLang from '../components/ProgrammingLang';
 // import WorkExperience from '../components/WorkExperience';
+import SkillSet from '../components/SkillSet';
 
 // hooks
 import useDocumentTitle from '../hooks/useDocumentTitle'
@@ -21,8 +22,11 @@ function Home() {
           <div className='rightPanel'>
             <AboutMe />
             <Education />
-            <Skills />
-            {/* <WorkExperience /> */}
+            <div className="skillDiv">
+              <ProgrammingLang />
+              <SkillSet />
+            </div>
+
           </div> 
       </div>
       

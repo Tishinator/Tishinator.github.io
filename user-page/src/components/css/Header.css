@@ -1,8 +1,10 @@
 /* Header.css */
 .header {
     position: fixed;
-    width: 100%;
+    width: 100%; /* Using percentage for full width */
+    height: min-content;
     z-index: 999;
+    top: 0; /* Ensuring the header stays at the top */
 }
 
 .bg-dark {
@@ -20,7 +22,6 @@
     height: 20px; /* Adjust the height as needed */
     width: 1px; /* Thin vertical line */
     background-color: #fff; /* White color for the separator */
-    margin: 0 10px; /* Margin to add space around the separator */
 }
 
 .name, .occupation {
@@ -28,19 +29,35 @@
     font-size: 1rem; /* Adjust font size as needed */
 }
 
-/* Adjustments for Nav items */
-.text-light {
-    color: #fff !important; /* Ensures text is light colored */
-}
-
-/* Additional styles for Nav */
 .nav-link {
     text-decoration: none; /* Removes underline from links */
     color: inherit; /* Inherits color from parent */
     padding: 0.5rem 1rem; /* Adjusts padding for better spacing */
 }
 
-.name{
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .name, .occupation {
+        font-size: 0.8rem; /* Smaller font size on smaller screens */
+    }
+
+    .nav-link {
+        padding: 0.5rem 0.5rem; /* Adjust padding for smaller screens */
+    }
+
+    .name-occupation-wrapper {
+        flex-direction: column; /* Stack items vertically on small screens */
+        align-items: start; /* Align items to the start */
+    }
+
+    .vert-separator {
+        height: 1px; /* Change to horizontal separator */
+        width: 50%; /* Width for horizontal separator */
+        margin: 5px 0; /* Adjusted margin for horizontal layout */
+    }
+}
+
+.name {
     font-weight: bold;
     font-size: 1.2rem;
 }
@@ -50,4 +67,9 @@
     color: white; /* White text color */
     padding: 5px 10px; /* Add some padding */
     border-radius: 5px; /* Rounded corners */
+}
+
+/* Adjustments for Nav items */
+.text-light {
+    color: #fff !important; /* Ensures text is light colored */
 }

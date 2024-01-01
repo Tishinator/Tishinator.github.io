@@ -3,16 +3,14 @@ import skills from '../data/json/skills.json'
 import './css/Skills.css'
 import { FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import { faLaptopCode } from '@fortawesome/free-solid-svg-icons';
-import { ProgressBar, Container, Row, Col } from 'react-bootstrap';
+import { ProgressBar, Row, Col } from 'react-bootstrap';
 
-const Skills = () => {
+const ProgrammingLang = () => {
     const [programmingLanguages, setProgrammingLanguages] = useState([]);
-    const [databases, setDatabases] = useState([]);
   
     useEffect(() => {
       // Load data from the JSON file
       setProgrammingLanguages(skills.programmingLanguages);
-      setDatabases(skills.Databases);
     }, []);
   
     const renderProgressBars = (items) => {
@@ -30,7 +28,7 @@ const Skills = () => {
         <div className="skills-section">
             <div className="skills-card">
                 <div className="skills-header">
-                <FontAwesomeIcon icon={faLaptopCode} /> <span>Programming Language Proficiency </span>
+                <FontAwesomeIcon icon={faLaptopCode} /> <span>Coding Expertise </span>
                 </div>
                 <div className="skills-body">
                     <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly', width: "100%"}}>
@@ -42,4 +40,4 @@ const Skills = () => {
     );
 };
 
-export default Skills;
+export default ProgrammingLang;
