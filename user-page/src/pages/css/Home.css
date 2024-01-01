@@ -19,7 +19,7 @@
     position: fixed; /* Reintroduced fixed position */
     height: 100vh;
     width: 20vw;
-    margin-top: 15vh; /* Top margin for alignment */
+    margin-top: 13vh; /* Top margin for alignment */
     padding-left: 20px;
 }
 
@@ -28,10 +28,12 @@
     flex-direction: column;
     /* margin-left: 30%; /* Same as the width of the background */
     /* margin-top: 2%; Align horizontally with leftPanel */ 
-    padding-left: 25vw;
-    padding-top: 15vh;
+    padding-left: 22vw;
+    padding-top: 13vh;
+    padding-right: 1vw;
     overflow: auto;
     position: relative;
+
 }
 
 .skillDiv {

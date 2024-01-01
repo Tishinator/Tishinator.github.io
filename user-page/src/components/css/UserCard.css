@@ -11,6 +11,11 @@ ul {
     box-shadow: 5px 1px 5px 1px #000000;
 }
 
+.responsive-img{
+    width: 100%;
+    height: auto;
+}
+
 .card-title{
     font-family: 'Fugaz One', cursive;
     font-weight: bold;

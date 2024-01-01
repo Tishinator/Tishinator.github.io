@@ -21,7 +21,7 @@ function UserCard(){
         <div>
           <div className='aboutme-card'>
             <Card>
-              <Card.Img variant='top' src={mtImage} />
+              <Card.Img variant='top' src={mtImage} className="responsive-img" />
               <Card.Body>
                 <Card.Title>Mike Tishman</Card.Title>
                 <Card.Subtitle>

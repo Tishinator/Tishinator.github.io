@@ -27,7 +27,7 @@
     display: grid;
     grid-template-columns: repeat(2, auto); /* Auto-sizing columns for smaller grid items */
     gap: 10px; /* Reduced and uniform gap */
-    margin: 10px auto 10px;
+    margin: 10px 10px 10px 10px;
     justify-content: center; /* Centering the grid items in the container */
 }
 
