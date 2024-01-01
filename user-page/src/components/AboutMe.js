@@ -15,6 +15,7 @@ return(
             <div className="text-container">
                 <div className='greeting'>{aboutmeContent.greeting}</div>
                 <div className='intro'>{aboutmeContent.introduction}</div>
+                <hr></hr>
                 <div className='bio'>
                     <EmphasizeText text={aboutmeContent.bio} emphasize={["Python", "Java", "JavaScript", "Vue", "React", "Florida Institute of Technology"]}/>
                 </div>
