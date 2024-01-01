@@ -1,0 +1,6 @@
+{
+    "devEnv" : ["Visual Studio Code", "Pycharm", "Eclipse"],
+    "verControl": ["Git", "GitHub"],
+    "issueTracking" : ["JIRA"],
+    "contIntegration": ["Jenkins"]
+}

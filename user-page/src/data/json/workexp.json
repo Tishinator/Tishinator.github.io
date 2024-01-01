@@ -1,0 +1,34 @@
+{
+    "jobs": [
+        {
+            "jobTitle" : "Software Engineer III",
+            "company" : "ENSCO, Inc.",
+            "timeFrame" : "2019 - Present",
+            "jobDescription": "● Oversaw the development and expansion of Selenium Functional Tests for AIMS, configuring them for operation on Jenkins. ● Contributed as a software developer on the Spectre and G2S projects, writing Python code, mitigating vulnerabilities identified by SonarQube, and setting up a GeoServer server to operate with the SSL (HTTPS) protocol. ● Orchestrated the integration of ECM software within ENSCO’s Restricted Area (RA), including the installation of MATLAB and Python, and the preparation of the customer’s code for development. ● Actively participated in several AIMS development projects, catering to our Air Force customer's needs. ● Facilitated collaborative efforts, assisted in software deliveries, and allocated work to team members, ensuring project success. ● Supported team members in their tasks by sharing insights and lessons from previous projects, fostering a collaborative work environment."
+        },
+        {
+            "jobTitle" : "Software Engineer II",
+            "company" : "ENSCO, Inc.",
+            "timeFrame" : "2017- 2019",
+            "jobDescription": "Became a key developer in various Seismic development teams, including G2S, ROSETTA, and CSAD providing both frontend and backend support for these projects. ● Contributed to the development of AIMS Incidents Master Source, Sampler List, and Source/Sampler Classification applications, demonstrating competence in Oracle SQL modifications, data export functionality, and GUI modifications. ● Took over initial builds for Python projects as part of ENSCO's goal to incorporate Python-based projects into the nightly/weekly build. ● Enhanced front-end user interface for the APACHE project, garnering positive feedback from project leads and clients."
+        },
+        {
+            "jobTitle" : "Software Internship",
+            "company" : "ENSCO, Inc.",
+            "timeFrame" : "2016 – 2017",
+            "jobDescription": "● Designed and programmed automated regression test for various ENSCO Applications. ● Converted and updated older tests to accommodate newer software testing tools"
+        },
+        {
+            "jobTitle" : "Software Internship",
+            "company" : "NetBoss Technology",
+            "timeFrame" : "2015 – 2015",
+            "jobDescription": "● Integrated a new functionality into Netboss’s Self-Monitoring system that provides a simple way to monitor customer data. ● Designed a Java server/client application that receives and formats data from mail servers, and stores that data into an ElasticSearch Database. ● Wrote a Javascript web interface to display data from an ElasticSearch database using Google-Map APIs"
+        },
+        {
+            "jobTitle" : "Software Engineer",
+            "company" : "8th Domain Technology",
+            "timeFrame" : "2014 – 2014",
+            "jobDescription": "● Designed a VB.NET / Visual C# Windows-Form desktop application for a Chiropractic business to allow them to have a paperless record keeping system."
+        }
+    ]
+}
