@@ -8,6 +8,7 @@ import ProgrammingLang from '../components/ProgrammingLang';
 import SkillSet from '../components/SkillSet';
 import { CarouselContext } from '../context/CarouselProvider';
 import useDocumentTitle from '../hooks/useDocumentTitle';
+import Projects from '../components/Projects';
 
 function Home() {
   const { index } = useContext(CarouselContext);
@@ -34,7 +35,7 @@ function Home() {
               </div>
             </Carousel.Item>
             <Carousel.Item>
-              {/* Content of the second item */}
+              <Projects />
             </Carousel.Item>
           </Carousel>
         </div> 

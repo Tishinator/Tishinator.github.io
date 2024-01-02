@@ -13,7 +13,7 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <CarouselProvider>
+        <CarouselProvider> {/* This provides context for the carousel (controlled by the header) */}
           <Header />
           < Routes>
             <Route path='/' element={<Home />} />
