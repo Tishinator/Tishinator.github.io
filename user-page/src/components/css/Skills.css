@@ -12,6 +12,7 @@
     overflow: hidden;
     position: relative; /* For positioning the gradient overlay */
     /* transition: background-size 0.3s ease; */
+    margin-bottom: 20px;
 }
 
 .skills-card:hover {
