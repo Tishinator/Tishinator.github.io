@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.c065ac0f.css",
-    "main.js": "/static/js/main.a7a75ac9.js",
+    "main.css": "/static/css/main.ec10d604.css",
+    "main.js": "/static/js/main.5a6ee81d.js",
     "static/js/787.f8320b4c.chunk.js": "/static/js/787.f8320b4c.chunk.js",
     "static/media/mt.png": "/static/media/mt.f1dc6259b6f055423fc6.png",
     "static/media/fitimg.jpg": "/static/media/fitimg.b9bbea28c8cf3d942f2c.jpg",
@@ -9,12 +9,12 @@
     "static/media/github-circle-svgrepo-com.svg": "/static/media/github-circle-svgrepo-com.e2461e5e42861afa4e306790f0561b89.svg",
     "static/media/linkedin-svgrepo-com.svg": "/static/media/linkedin-svgrepo-com.fad6cb3b7ce0a6b6474fa2bc8ce52bc7.svg",
     "index.html": "/index.html",
-    "main.c065ac0f.css.map": "/static/css/main.c065ac0f.css.map",
-    "main.a7a75ac9.js.map": "/static/js/main.a7a75ac9.js.map",
+    "main.ec10d604.css.map": "/static/css/main.ec10d604.css.map",
+    "main.5a6ee81d.js.map": "/static/js/main.5a6ee81d.js.map",
     "787.f8320b4c.chunk.js.map": "/static/js/787.f8320b4c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c065ac0f.css",
-    "static/js/main.a7a75ac9.js"
+    "static/css/main.ec10d604.css",
+    "static/js/main.5a6ee81d.js"
   ]
 }
