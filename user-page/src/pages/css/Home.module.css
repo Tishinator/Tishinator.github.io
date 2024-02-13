@@ -1,0 +1,40 @@
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #a8b3bea4;
+    width: 30%;
+    height: 100vh;
+    z-index: -1; /* Keep it at the back */
+    box-shadow: 0 4px 8px 0 #000000;
+}
+
+.pageContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.leftPanel {
+    position: fixed;
+    height: 100vh;
+    width: 20vw; /* Matches the flex-basis */
+    margin-top: 13vh;
+    padding-left: 100px;
+}
+
+.centerPanel {
+    flex-grow: 1; /* Allows the panel to grow and fill the available space */
+    padding-top: 13vh;
+    padding-left: 25vw; /* Adjusted to match the leftPanel width */
+    padding-right: 20vw; /* Space for the rightPanel if it's not fixed */
+    overflow: auto;
+    position: relative;
+}
+
+
+.skillDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}
+

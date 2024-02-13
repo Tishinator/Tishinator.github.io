@@ -1,4 +1,4 @@
-.aboutme-info {
+.aboutmeInfo {
   background-color: rgb(255, 255, 255);
   align-items: center; /* Centers content vertically */
   justify-content: center; 
@@ -7,24 +7,24 @@
   border-radius: 5px;
 }
 
-.aboutme-info .text-container {
+.aboutmeInfo .textContainer {
   color: #092d52;
 }
 
-.aboutme-info .text-container .greeting {
+.aboutmeInfo .textContainer .greeting {
   text-align: left;
   font-size: 3rem;
   font-weight: bold;
   padding-left: 20px;
 }
 
-.aboutme-info .text-container .intro {
+.aboutmeInfo .textContainer .intro {
   text-align: center;
   font-size: 1.2rem;
   padding-left: 20px;
 }
 
-.aboutme-info .text-container .bio {
+.aboutmeInfo .textContainer .bio {
   text-align: justify;
   margin: 20px;
 }

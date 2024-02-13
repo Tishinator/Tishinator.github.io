@@ -1,44 +1,31 @@
 import React, { useContext } from 'react';
 import { Carousel } from 'react-bootstrap';
-import './css/Home.css';
+import styles from'./css/Home.module.css';
 import UserCard from '../components/UserCard';
 import AboutMe from '../components/AboutMe';
 import Education from '../components/Education';
 import ProgrammingLang from '../components/ProgrammingLang';
 import SkillSet from '../components/SkillSet';
-import { CarouselContext } from '../context/CarouselProvider';
 import useDocumentTitle from '../hooks/useDocumentTitle';
 import Projects from '../components/Projects';
 
 function Home() {
-  const { index } = useContext(CarouselContext);
 
   useDocumentTitle('Tishinator Home');
 
   return (
     <div>
-      <span className="background" />
-      <div className='page-container'>
-        <div className='leftPanel'><UserCard /></div>
-        <div className='rightPanel'>
-          <Carousel
-                    activeIndex={index} 
-                    controls={false} 
-                    indicators={false}
-                    interval={null}>
-            <Carousel.Item>
+      <span className={styles.background}/>
+      <div className={styles.pageContainer}>
+        <div className={styles.leftPanel}><UserCard /></div>
+        <div className={styles.centerPanel}>
               <AboutMe />
               <Education />
-              <div className="skillDiv">
+              <div className={styles.skillDiv}>
                 <ProgrammingLang />
                 <SkillSet />
               </div>
-            </Carousel.Item>
-            <Carousel.Item>
-              <Projects />
-            </Carousel.Item>
-          </Carousel>
-        </div> 
+        </div>
       </div>
     </div>
   );

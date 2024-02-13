@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap'); */
 
 
 ul {
@@ -17,7 +17,7 @@ ul {
 }
 
 .card-title {
-    font-family: 'Fugaz One', cursive;
+    /* font-family: 'Fugaz One', cursive; */
     font-weight: bold;
     font-size: 2rem; /* Default font size */
     padding-bottom: 5px;
