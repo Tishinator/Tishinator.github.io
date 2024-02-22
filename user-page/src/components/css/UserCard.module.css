@@ -11,56 +11,32 @@ ul {
     box-shadow: 5px 1px 5px 1px #000000;
 }
 
-.responsive-img{
+.responsiveImg{
     width: 100%;
     height: auto;
 }
 
-.card-title {
+.cardTitle {
     /* font-family: 'Fugaz One', cursive; */
     font-weight: bold;
     font-size: 2rem; /* Default font size */
     padding-bottom: 5px;
 }
 
-.custom-badge {
+.customBadge {
     font-size: 1.2em; /* Default font size */
     padding: 0.5em 1em; /* Default padding */
     border-radius: 10px;
 }
 
-/* Smaller screens (e.g., tablets and large phones) */
-@media (max-width: 768px) {
-    .card-title {
-        font-size: 1.5rem; /* Smaller font size on smaller screens */
-    }
 
-    .custom-badge {
-        font-size: 1em; /* Slightly smaller font size */
-        padding: 0.4em 0.8em; /* Slightly smaller padding */
-    }
-}
-
-/* Very small screens (e.g., small phones) */
-@media (max-width: 576px) {
-    .card-title {
-        font-size: 1.2rem; /* Even smaller font size for very small screens */
-    }
-
-    .custom-badge {
-        font-size: 0.9em; /* Further reduce font size */
-        padding: 0.3em 0.6em; /* Further reduce padding */
-    }
-}
-
-
-.btn-custom {
+.btnCustom {
     background-color: #092d52; /* Custom background color */
     color: white; /* Text color */
     border-color: #092d52; /* Border color, if needed */
 }
 
-.btn-custom:hover {
+.btnCustom:hover {
     background-color: #0b3d6e;
     color: white
 }

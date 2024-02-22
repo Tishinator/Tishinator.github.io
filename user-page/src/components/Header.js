@@ -1,25 +1,26 @@
-import React, { useContext, useState } from 'react';
-import { Container, Row, Col, Nav } from 'react-bootstrap';
-import { CarouselContext } from '../context/CarouselProvider';
-import './css/Header.css';
+import React, { useContext } from 'react';
+import { Container } from 'react-bootstrap';
+import NavBar from 'react-bootstrap/Navbar';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMoon as farMoon, faSun as fasSun } from '@fortawesome/free-solid-svg-icons';
+import { AppThemeContext } from '../context/AppThemeContext';
 
 const Header = () => {
+    const { theme, toggleTheme } = useContext(AppThemeContext);
+    const darkMode = theme === 'dark';
 
     return (
-        <div className='header'>
-            <Container fluid className="bg-dark text-light py-3">
-                <Row>
-                    <Col md={6} className="d-flex align-items-center">
-                        <div className='name-occupation-wrapper'>
-                            <p className="name">Mike Tishman</p>
-                            <div className="vert-separator"></div>
-                            <p className="occupation">Software Engineer</p>
-                        </div>
-                    </Col>
-                </Row>
+        <NavBar bg={darkMode ?"dark" : "light"} data-bs-theme={darkMode?"dark" : "light"}  fixed='top'>
+            <Container style={{ paddingLeft: '20px' }} fluid='true'>
+                <NavBar.Brand>Mike Tishman</NavBar.Brand>
             </Container>
-        </div>
+            <NavBar.Collapse className='justify-content-end'>
+                <Container fluid="true" style={{ paddingRight: '20px' }}>
+                    <FontAwesomeIcon icon={darkMode ? farMoon : fasSun} onClick={toggleTheme} size='xl'/>
+                </Container>
+            </NavBar.Collapse>
+        </NavBar>
     );
-}
+};
 
 export default Header;

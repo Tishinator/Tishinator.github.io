@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import skills from '../data/json/skills.json'
-import './css/Skills.css'
+import styles from './css/Skills.module.css';
 import { FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import { faLaptopCode } from '@fortawesome/free-solid-svg-icons';
 import { ProgressBar, Row, Col } from 'react-bootstrap';
@@ -25,12 +25,12 @@ const ProgrammingLang = () => {
       };
 
     return (
-        <div className="skills-section">
-            <div className="skills-card">
-                <div className="skills-header">
+        <div className={styles.skillsSection}>
+            <div className={styles.skillsCard}>
+                <div className={styles.skillsHeader}>
                 <FontAwesomeIcon icon={faLaptopCode} /> <span>Coding Expertise </span>
                 </div>
-                <div className="skills-body">
+                <div className={styles.skillsBody}>
                     <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly', width: "100%"}}>
                     {renderProgressBars(programmingLanguages)}
                     </div>

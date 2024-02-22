@@ -1,4 +1,8 @@
 import './App.css';
+import './DarkMode.css';
+import './LightMode.css';
+import React, { useEffect, useState, useContext,  } from 'react';
+import { AppThemeContext, ThemeProvider } from './context/AppThemeContext';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 
@@ -23,18 +27,34 @@ const UnderConstruction = () => {
 
 
 function App() {
+  const {theme} = useContext(AppThemeContext);
+
+
+  useEffect(() => {
+    console.log(`THEME CHANGED TO ${theme}`);
+  },[theme]);
+
+
   const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
   return isLocalhost ?  
-  <div className="App">
+  <div className={`App ${theme === 'dark' ? 'dark-theme' : 'light-theme'}`}>
     <Router>
         <Header />
-        < Routes>
-          <Route path='/' element={<Home />} />
-        </Routes>
+        <div className='content'>
+          < Routes>
+            <Route path='/' element={<Home />} />
+          </Routes>
+        </div>
     </Router>
   </div>: 
   <UnderConstruction />;
 
 }
 
-export default App;
+export default function AppWrapper() {
+  return (
+    <ThemeProvider>
+        <App />
+    </ThemeProvider>
+  );
+};

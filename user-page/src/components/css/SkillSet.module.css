@@ -1,10 +1,10 @@
-.skillset-section {
+.skillsetSection {
     margin-top: 20px;
     width: 50%; /* Matching the width with .skills-section */
     align-self: start; /* Aligning to the start as in .skills-section */
 }
 
-.skillset-card {
+.skillsetCard {
     border-radius: 8px; /* Keeping border radius the same */
     box-shadow: 0 4px 8px rgb(0, 0, 0); /* Same box shadow */
     overflow: hidden; /* Keeping overflow hidden */
@@ -12,7 +12,7 @@
     margin-left: 20px;
 }
 
-.skillset-header {
+.skillsetHeader {
     background-color: #092d52; /* Same background color */
     color: white; /* Same text color */
     padding: 1px 10px; /* Same padding */
@@ -23,7 +23,7 @@
     font-size: 1.5rem; /* Same font size */
 }
 
-.skillset-grid-container {
+.skillsetGridContainer {
     display: grid;
     grid-template-columns: repeat(2, auto); /* Auto-sizing columns for smaller grid items */
     gap: 10px; /* Reduced and uniform gap */
@@ -31,7 +31,7 @@
     justify-content: center; /* Centering the grid items in the container */
 }
 
-.skillset-grid-item {
+.skillsetGridItem {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -42,12 +42,12 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.skillset-grid-item:hover {
+.skillsetGridItem:hover {
     transform: scale(1.05); /* Slightly scale up on hover */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
 }
 
-.skillset-grid-item p {
+.skillsetGridItem p {
     margin-top: 10px; /* Space between icon and text */
     text-align: center; /* Center align text */
     font-size: 1rem; /* Font size for the text */

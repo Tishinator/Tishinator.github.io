@@ -8,16 +8,19 @@ import ProgrammingLang from '../components/ProgrammingLang';
 import SkillSet from '../components/SkillSet';
 import useDocumentTitle from '../hooks/useDocumentTitle';
 import Projects from '../components/Projects';
+import Introduction from '../components/Introduction';
+import { AppThemeContext } from '..//context/AppThemeContext';
 
 function Home() {
-
+  const { theme } = useContext(AppThemeContext);
+  const modalThemeClass = theme === 'dark' ? 'bg-dark text-white' : '';
+  
   useDocumentTitle('Tishinator Home');
 
   return (
     <div>
-      <span className={styles.background}/>
-      <div className={styles.pageContainer}>
-        <div className={styles.leftPanel}><UserCard /></div>
+      <div className={`${styles.pageContainer}`}>
+        <Introduction />
         <div className={styles.centerPanel}>
               <AboutMe />
               <Education />
@@ -27,6 +30,7 @@ function Home() {
               </div>
         </div>
       </div>
+
     </div>
   );
 }

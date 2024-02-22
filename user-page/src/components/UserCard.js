@@ -13,7 +13,7 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { faDownload } from '@fortawesome/free-solid-svg-icons';
 
 
-import './css/UserCard.css'
+import styles from './css/UserCard.module.css'
 
 
 function UserCard(){
@@ -21,26 +21,26 @@ function UserCard(){
         <div>
           <div className='aboutme-card'>
             <Card>
-              <Card.Img variant='top' src={mtImage} className="responsive-img" />
+              <Card.Img variant='top' src={mtImage} className={styles.responsiveImg} />
               <Card.Body>
                 <Card.Title>Mike Tishman</Card.Title>
                 <Card.Subtitle>
-                  <span className="badge custom-badge bg-dark text-light">Software Engineer</span>
+                  <span className={`badge bg-dark text-light ${styles.customBadge}`}>Software Engineer</span>
                 </Card.Subtitle>
               </Card.Body>
               <ListGroup variant="list-group-flush">
                 <ListGroup.Item>
                     <ul>
                         <li>
-                            <div className='infoItem'>
-                                <div className='icon'><FontAwesomeIcon icon={faLocationDot} /></div>
-                                <div className='text'><span>Florida, USA</span></div>
+                            <div className={styles.infoItem}>
+                                <div className={styles.icon}><FontAwesomeIcon icon={faLocationDot} /></div>
+                                <div className={styles.text}><span>Florida, USA</span></div>
                             </div>
                         </li>
                         <li>
-                            <div className='infoItem'>
-                               <div className='icon'><FontAwesomeIcon icon={faEnvelope} /></div>
-                               <div className='text'><span>mike</span><span>.</span><span>tishman</span><span>&#64;</span>
+                            <div className={styles.infoItem}>
+                               <div className={styles.icon}><FontAwesomeIcon icon={faEnvelope} /></div>
+                               <div className={styles.text}><span>mike</span><span>.</span><span>tishman</span><span>&#64;</span>
                                 <span>gmail.com</span></div>
                             </div>
                         </li>
@@ -48,7 +48,7 @@ function UserCard(){
                 </ListGroup.Item>
                 <ListGroup.Item>
                 <a href={resume} download="mtishmanJuly2023Resume.pdf" style={{ textDecoration: 'none' }}>
-                    <button className="btn btn-custom">
+                    <button className={`btn ${styles.btnCustom}`}>
                         <FontAwesomeIcon icon={faDownload} /> Download CV
                     </button>
                 </a>

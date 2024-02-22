@@ -1,16 +1,16 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import './css/IconHeaderCard.css';
+import styles from './css/IconHeaderCard.module.css';
 
 const IconHeaderCard = ({ title, icon, bodyContent }) => {
     
     return (
-        <div className="icon-card-section">
-            <div className="icon-card">
-                <div className="icon-card-header">
+        <div className={styles.iconCardSection}>
+            <div className={styles.iconCard}>
+                <div className={styles.iconCardHeader}>
                     <FontAwesomeIcon icon={icon} /> <span>{title}</span>
                 </div>
-                <div className="icon-card-body">
+                <div className={styles.iconCardBody}>
                     {bodyContent}
                 </div>
             </div>

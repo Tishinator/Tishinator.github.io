@@ -1,18 +1,18 @@
 import React from 'react';
 import education from '../data/json/education.json'
-import './css/Education.css'
+import styles from './css/Education.module.css';
 import { FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import { faGraduationCap } from '@fortawesome/free-solid-svg-icons';
 
 const Education = () => {
     return (
-        <div className="education-section">
-            <div className="education-card">
-                <div className="education-header">
+        <div className={styles.educationSection}>
+            <div className={styles.educationCard}>
+                <div className={styles.educationHeader}>
                 <FontAwesomeIcon icon={faGraduationCap} /> <span>Education</span>
                 </div>
-                <div className="education-body">
-                    <div className="education-info">
+                <div className={styles.educationBody}>
+                    <div className={styles.educationInfo}>
                         <h3>{education.school}</h3>
                         <p>{education.degree}, {education.gradYear}</p>
                     </div>
