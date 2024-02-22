@@ -13,7 +13,7 @@
 
 .centerPanel {
     flex-grow: 1; /* Allows the panel to grow and fill the available space */
-    padding-top: 13vh;
+    padding-top: 15vh;
     padding-left: 25vw; /* Adjusted to match the leftPanel width */
     padding-right: 20vw; /* Space for the rightPanel if it's not fixed */
     overflow: auto;

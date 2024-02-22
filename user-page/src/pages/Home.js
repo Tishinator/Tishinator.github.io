@@ -13,7 +13,8 @@ import { AppThemeContext } from '..//context/AppThemeContext';
 
 function Home() {
   const { theme } = useContext(AppThemeContext);
-  const modalThemeClass = theme === 'dark' ? 'bg-dark text-white' : '';
+  const darkMode = theme === 'dark';
+  let bkgrd = darkMode ? 'black' : 'white';
   
   useDocumentTitle('Tishinator Home');
 
@@ -21,7 +22,7 @@ function Home() {
     <div>
       <div className={`${styles.pageContainer}`}>
         <Introduction />
-        <div className={styles.centerPanel}>
+        <div className={`${styles.centerPanel}`} style={{ backgroundColor: bkgrd }}>
               <AboutMe />
               <Education />
               <div className={styles.skillDiv}>
