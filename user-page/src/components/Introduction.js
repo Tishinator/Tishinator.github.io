@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Row, Col, Image } from 'react-bootstrap';
 import styles from './css/Introduction.module.css';
-import myPhoto from '../assets/me.png';
+import myPhoto from '../assets/updatedMe.png';
 import Carousel from 'react-bootstrap/Carousel';
 
 function Introduction() {
