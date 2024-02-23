@@ -8,7 +8,7 @@ import Image from 'react-bootstrap/Image';
 import { Nav, Navbar } from 'react-bootstrap';
 import me from '../assets/mt.png';
 import Education from "./Education";
-import SkillSet from "./SkillSet";
+
 import { AppThemeContext } from "../context/AppThemeContext";
 
 
@@ -17,6 +17,7 @@ import EmphasizeText from '../utils/EmphasizeText';
 
 // assets
 import aboutmeContent from '../data/json/aboutme.json'
+import Experience from "./Experience";
 
 function AboutMe(){
     const [activeTab, setActiveTab] = useState('Skills');
@@ -53,10 +54,10 @@ return(
                                 </Nav>
                             </Navbar.Collapse>
                         </Container>
-                    </Navbar>
-                    <div>
-                        {activeTab === 'Skills' && <div><SkillSet /></div>}
-                        {activeTab === 'Experience' && <div>Experience Content Here</div>}
+                </Navbar>
+                    <div style={{paddingTop: '1vh'}}>
+                        {activeTab === 'Skills' && <div></div>}
+                        {activeTab === 'Experience' && <div><Experience/></div>}
                         {activeTab === 'Education' && <div><Education/></div>}
                     </div>
                 </Row>

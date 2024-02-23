@@ -14,3 +14,12 @@
     background-color: #dad8d8;
     color: rgb(0, 0, 0); 
   }
+
+  .light-theme .accordion-button {
+    background-color: rgb(240, 240, 240);
+    color: rgb(0, 0, 0); 
+  }
+  
+  .light-theme .accordion-button::after {
+    filter: invert(0%);
+  }

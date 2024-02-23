@@ -1,24 +1,52 @@
 import React from 'react';
 import education from '../data/json/education.json'
-import styles from './css/Education.module.css';
-import { FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import { faGraduationCap } from '@fortawesome/free-solid-svg-icons';
+import { Container, Row, Col, Image } from 'react-bootstrap';
+import FITLOGO from '../assets/fitLogo.png';
 
 const Education = () => {
+
+    const styles = {
+        educationCol: {
+            fontWeight: 'bold'
+        },
+        educationSchool: {
+          whiteSpace: 'nowrap',
+          overflow: 'hidden',
+          textOverflow: 'ellipsis',
+          fontSize: '1.5vw', // Adjust the size as needed
+          paddingBottom: '0.5vw'
+          
+        },
+        educationDegreeYear: {
+          whiteSpace: 'nowrap',
+          overflow: 'hidden',
+          textOverflow: 'ellipsis',
+          fontSize: '1vw', // Adjust the size as needed
+        },
+        schoolBorderSpan: {
+            display: 'inline-block',
+            borderBottom: '2px solid rgb(255, 0, 128)', 
+            
+            paddingBottom: '0.5vw',
+            width: '90%', 
+          },
+      };
     return (
-        <div className={styles.educationSection}>
-            <div className={styles.educationCard}>
-                <div className={styles.educationHeader}>
-                <FontAwesomeIcon icon={faGraduationCap} /> <span>Education</span>
+        <Container>
+            <Row>
+                <Col>
+                    <Image src={FITLOGO} alt="Florida Institute of Technology's Logo"  style={{height: '8vh', width: 'auto'}}/>
+                </Col>
+                <Col>
+                <div style={styles.educationCol}>
+                    <h3 style={styles.educationSchool}>
+                        <span style={styles.schoolBorderSpan}>{education.school}</span>
+                    </h3>
+                    <p style={styles.educationDegreeYear}>{education.degree}, {education.gradYear}</p>
                 </div>
-                <div className={styles.educationBody}>
-                    <div className={styles.educationInfo}>
-                        <h3>{education.school}</h3>
-                        <p>{education.degree}, {education.gradYear}</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+                </Col>
+            </Row>
+        </Container>
     );
 };
 

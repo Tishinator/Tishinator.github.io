@@ -15,3 +15,12 @@
   background-color: #333;
   color: white; 
 }
+
+.dark-theme .accordion-button {
+  background-color: #333;
+  color: white; 
+}
+
+.dark-theme .accordion-button::after {
+  filter: invert(100%);
+}
