@@ -29,7 +29,7 @@ function AboutMe(){
     };
 
 return(
-    <Container>
+    <Container fluid>
         <Row>
             <Col>
                 <Image src={me} alt="ME"  className={`p-2`}/>
