@@ -22,13 +22,16 @@ function Home() {
     <div>
       <div className={`${styles.pageContainer}`}>
         <Introduction />
-        <div className={`${styles.centerPanel}`} style={{ backgroundColor: bkgrd }}>
+        {/* <div className={`${styles.centerPanel}`} style={{ backgroundColor: bkgrd }} id='about-me'>
               <AboutMe />
               <Education />
               <div className={styles.skillDiv}>
                 <ProgrammingLang />
                 <SkillSet />
               </div>
+        </div> */}
+        <div className={`${styles.centerPanel}`} style={{ backgroundColor: bkgrd }} id='about-me'>
+          <AboutMe />
         </div>
       </div>
 

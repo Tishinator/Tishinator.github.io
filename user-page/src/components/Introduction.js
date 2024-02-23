@@ -27,7 +27,7 @@ function Introduction() {
     }
     
     return (
-        <div className={`${styles.introContainer}`}  style={imageBackground}>
+        <div className={`${styles.introContainer}`}  style={imageBackground} id="home">
             <Container className="d-flex flex-column align-items-center justify-content-center vh-100">
                 <Row className="w-100">
                     <Col  className="text-center text-md-left">

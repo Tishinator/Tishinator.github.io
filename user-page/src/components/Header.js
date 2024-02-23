@@ -1,28 +1,65 @@
-import React, { useContext } from 'react';
-import { Container, NavItem } from 'react-bootstrap';
-import NavBar from 'react-bootstrap/Navbar';
+import React, { useContext,  useState, useEffect } from 'react';
+import { Container, Nav, Navbar } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMoon as farMoon, faSun as fasSun } from '@fortawesome/free-solid-svg-icons';
 import { AppThemeContext } from '../context/AppThemeContext';
-import styles from './css/Header.module.css'
+import styles from './css/Header.module.css';
 
 const Header = () => {
     const { theme, toggleTheme } = useContext(AppThemeContext);
     const darkMode = theme === 'dark';
 
+    const [activeSection, setActiveSection] = useState('');
+
+    useEffect(() => {
+        const handleScroll = () => {
+          const sections = ['home', 'about-me', 'projects']; // Add your section IDs
+          const currentSection = sections.find(section => {
+            const element = document.getElementById(section);
+            if (element) {
+              const scrollPosition = window.scrollY + window.innerHeight / 2; // Adjust as needed
+              return scrollPosition >= element.offsetTop && scrollPosition <= element.offsetTop + element.offsetHeight;
+            }
+            return false;
+          });
+          if (currentSection) {
+            setActiveSection(currentSection);
+          } else {
+            setActiveSection('');
+          }
+        };
+      
+        window.addEventListener('scroll', handleScroll);
+      
+        return () => window.removeEventListener('scroll', handleScroll);
+      }, []);
+      
+
+
+    const scrollToSection = (sectionId) => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    };
+
     return (
-        <NavBar bg={darkMode ?"dark" : "light"} data-bs-theme={darkMode?"dark" : "light"}  fixed='top'>
-            <Container style={{ paddingLeft: '20px' }} fluid='true'>
-                <NavBar.Brand><span className={styles.nameText}>Mike</span> Tishman</NavBar.Brand>
-            </Container>
-            <NavBar.Collapse className='justify-content-end'>
-                {/* <NavItem>About</NavItem>
-                <NavItem>Projects</NavItem> */}
-                <Container fluid="true" style={{ paddingRight: '20px' }}>
+        <Navbar bg={darkMode ? "dark" : "light"} variant={darkMode ? "dark" : "light"} fixed='top' expand="lg">
+            <Container fluid>
+                <Navbar.Brand><span className={styles.nameText}>Mike</span> Tishman</Navbar.Brand>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
+                    <Nav variant='underline'>
+                        <Nav.Link onClick={() => scrollToSection('home')} className={activeSection === 'home' ? 'active' : ''}>Home</Nav.Link>
+                        <Nav.Link onClick={() => scrollToSection('about-me')} className={activeSection === 'about-me' ? 'active' : ''}>About Me</Nav.Link>
+                        <Nav.Link onClick={() => scrollToSection('projects')} className={activeSection === 'projects' ? 'active' : ''}>Projects</Nav.Link>
+                    </Nav>
+                </Navbar.Collapse>
+                <div style={{ paddingLeft: '20px' }}>
                     <FontAwesomeIcon icon={darkMode ? farMoon : fasSun} onClick={toggleTheme} size='xl'/>
-                </Container>
-            </NavBar.Collapse>
-        </NavBar>
+                </div>
+            </Container>
+        </Navbar>
     );
 };
 
