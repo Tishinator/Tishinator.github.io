@@ -28,22 +28,22 @@ const Education = () => {
             borderBottom: '2px solid rgb(255, 0, 128)', 
             
             paddingBottom: '0.5vw',
-            width: '90%', 
+            width: '80%', 
           },
       };
     return (
         <Container>
-            <Row>
-                <Col>
-                    <Image src={FITLOGO} alt="Florida Institute of Technology's Logo"  style={{height: '8vh', width: 'auto'}}/>
+            <Row className='dflex justify-content-center'>
+                <Col md={1}>
+                    <Image src={FITLOGO} alt="Florida Institute of Technology's Logo"  style={{height: '10vh', width: 'auto'}}/>
                 </Col>
-                <Col>
-                <div style={styles.educationCol}>
-                    <h3 style={styles.educationSchool}>
-                        <span style={styles.schoolBorderSpan}>{education.school}</span>
-                    </h3>
-                    <p style={styles.educationDegreeYear}>{education.degree}, {education.gradYear}</p>
-                </div>
+                <Col md={9}>
+                    <div style={styles.educationCol}>
+                        <h3 style={styles.educationSchool}>
+                            <span style={styles.schoolBorderSpan}>{education.school}</span>
+                        </h3>
+                        <p style={styles.educationDegreeYear}>{education.degree}, {education.gradYear}</p>
+                    </div>
                 </Col>
             </Row>
         </Container>

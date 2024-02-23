@@ -13,18 +13,28 @@
 
 .greeting {
   text-align: left;
-  font-size: 3rem;
+  font-size: min(2vw, 2rem);
   font-weight: bold;
   padding-left: 20px;
 }
 
 .intro {
   text-align: center;
-  font-size: 1.2rem;
+  font-size: min(2vw, 2rem);
   padding-left: 20px;
 }
 
 .bio {
-  text-align: justify;
+  text-align: left;
   margin: 20px;
+  font-size: min(2vw, 1rem);
+}
+
+
+.photo {
+    height: 40vh;
+    width: auto;
+    max-width: 20vw;
+    max-height: 40vh; /* Add this line to ensure the image does not exceed the viewport height */
+    object-fit: contain; /* This ensures the image maintains its aspect ratio */
 }

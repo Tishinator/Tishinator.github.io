@@ -12,10 +12,10 @@
 }
 
 .centerPanel {
-    flex-grow: 1; /* Allows the panel to grow and fill the available space */
+    flex-grow: 1;
     padding-top: 10vh;
-    /* padding-left: 25vw; 
-    padding-right: 20vw;  */
+    padding-left: 12vw; 
+    padding-right: 12vw; 
     overflow: auto;
     position: relative;
     height: 100vh;

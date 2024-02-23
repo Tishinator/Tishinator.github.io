@@ -30,11 +30,11 @@ function AboutMe(){
 
 return(
     <Container fluid>
-        <Row>
+        <Row >
             <Col>
-                <Image src={me} alt="ME"  className={`p-2`}/>
+                <Image src={me} alt="ME"  className={styles.photo}/>
             </Col>
-            <Col>
+            <Col md={8}>
                 <Row><div className={styles.greeting}>{aboutmeContent.greeting}</div></Row>
                 <Row><div className={styles.intro}>{aboutmeContent.introduction}</div></Row>
                 <Row>
