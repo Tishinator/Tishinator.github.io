@@ -20,7 +20,7 @@ import aboutmeContent from '../data/json/aboutme.json'
 import Experience from "./Experience";
 
 function AboutMe(){
-    const [activeTab, setActiveTab] = useState('Skills');
+    const [activeTab, setActiveTab] = useState('Education');
     const { theme, toggleTheme } = useContext(AppThemeContext);
     let themedTextColor = theme === 'dark' ? 'text-light' : 'text-dark';
 
@@ -47,18 +47,18 @@ return(
                         <Container fluid>
                             <Navbar.Toggle aria-controls="basic-navbar-nav" />
                             <Navbar.Collapse id="basic-navbar-nav" className="justify-content-center">
-                                <Nav variant='underline' defaultActiveKey="Skills" onSelect={handleSelect} >
+                                <Nav variant='underline' defaultActiveKey="Education" onSelect={handleSelect} >
+                                    <Nav.Link eventKey="Education" className={themedTextColor}>Education</Nav.Link>
                                     <Nav.Link eventKey="Skills" className={themedTextColor}>Skills</Nav.Link>
                                     <Nav.Link eventKey="Experience" className={themedTextColor}>Experience</Nav.Link>
-                                    <Nav.Link eventKey="Education" className={themedTextColor}>Education</Nav.Link>
                                 </Nav>
                             </Navbar.Collapse>
                         </Container>
                 </Navbar>
                     <div style={{paddingTop: '1vh'}}>
+                        {activeTab === 'Education' && <div><Education/></div>}
                         {activeTab === 'Skills' && <div></div>}
                         {activeTab === 'Experience' && <div><Experience/></div>}
-                        {activeTab === 'Education' && <div><Education/></div>}
                     </div>
                 </Row>
 
