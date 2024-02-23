@@ -4,6 +4,7 @@ import AboutMe from '../components/AboutMe';
 import useDocumentTitle from '../hooks/useDocumentTitle';
 import Introduction from '../components/Introduction';
 import { AppThemeContext } from '..//context/AppThemeContext';
+import Projects from '../components/Projects';
 
 function Home() {
   const { theme } = useContext(AppThemeContext);
@@ -16,16 +17,11 @@ function Home() {
     <div>
       <div className={`${styles.pageContainer}`}>
         <Introduction />
-        {/* <div className={`${styles.centerPanel}`} style={{ backgroundColor: bkgrd }} id='about-me'>
-              <AboutMe />
-              <Education />
-              <div className={styles.skillDiv}>
-                <ProgrammingLang />
-                <SkillSet />
-              </div>
-        </div> */}
         <div className={`${styles.centerPanel}`} style={{ backgroundColor: bkgrd }} id='about-me'>
           <AboutMe />
+        </div>
+        <div className={`${styles.centerPanel}`} style={{ backgroundColor: bkgrd }} id='projects'>
+          <Projects />
         </div>
       </div>
 
