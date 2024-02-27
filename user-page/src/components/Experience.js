@@ -13,7 +13,8 @@ function Experience() {
         "ReactJS" : "primary",
         "VueJS" : "success",
         "Java" : "danger",
-        "Tester" : "secondary",
+        "Selenium" : "primary",
+        "TestComplete": "primary",
         "Visual Basic" : "info"
     }
 
@@ -28,10 +29,10 @@ function Experience() {
                                 <Col><b>{job.company}</b></Col>
                                 <Col>{job.jobTitle}</Col>
                                 <Col>
-                                    <Row className="d-flex justify-content-end">
+                                    <Row className="d-flex justify-content-end" style={{'--bs-gutter-x': "0.5rem"}}>
                                         {job.skillHighlights.map((skill, skillIndex) => (
-                                            <Col key={skillIndex} className="d-flex justify-content-end" >
-                                                <Badge bg={skillColors[skill]} text={["warning", "info"].includes(skillColors[skill]) ? 'dark' : ""}>
+                                            <Col key={skillIndex} className="d-flex justify-content-end" style={{flex: '0 0'}}>
+                                                <Badge bg={skillColors[skill]} text={["warning", "info", "light" ].includes(skillColors[skill]) ? 'dark' : ""}>
                                                     {skill}
                                                 </Badge>
                                             </Col>
@@ -43,7 +44,7 @@ function Experience() {
                         </Container>
                     </Accordion.Header>
                     <Accordion.Body>
-                        {job.jobDescription}
+                        <span style={{textAlign: 'left'}} dangerouslySetInnerHTML={{ __html: job.jobDescription }} />
                     </Accordion.Body>
                 </Accordion.Item>
             ))}
