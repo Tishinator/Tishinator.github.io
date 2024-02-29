@@ -8,6 +8,7 @@ import Image from 'react-bootstrap/Image';
 import { Nav, Navbar } from 'react-bootstrap';
 import me from '../assets/mt.png';
 import Education from "./Education";
+import Skills from "./Skills";
 
 import { AppThemeContext } from "../context/AppThemeContext";
 
@@ -57,7 +58,7 @@ return(
                 </Navbar>
                     <div style={{paddingTop: '1vh'}}>
                         {activeTab === 'Education' && <div><Education/></div>}
-                        {activeTab === 'Skills' && <div></div>}
+                        {activeTab === 'Skills' && <div><Skills /></div>}
                         {activeTab === 'Experience' && <div><Experience/></div>}
                     </div>
                 </Row>
