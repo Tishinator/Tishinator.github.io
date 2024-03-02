@@ -4,27 +4,22 @@
             "name" : "PTCG-Sim Deckbuilder",
             "image" : "/images/PTCGSimImage.PNG",
             "github" : "https://github.com/Tishinator/PTCGDeckBuilder",
-            "description": "The DatasetGenerator.py script is a Python program designed to apply transformations on an image. These transformations will create a dataset from the single image to be used in machine learning. Original project was done for a machine learning project in college, but was branched out for uses on other projects.",
-
-            "hasDemo": true,
-            "demo" : {}
+            "description": "",
+            "component": "ptcg-deckbuilder"
         },
         {
             "name" : "Social Saver",
             "image" : "/images/socialsaver.PNG",
             "github" : "https://github.com/Tishinator/SocialSaver-ui",
-            "description": "The DatasetGenerator.py script is a Python program designed to apply transformations on an image. These transformations will create a dataset from the single image to be used in machine learning. Original project was done for a machine learning project in college, but was branched out for uses on other projects.",
-
-            "hasDemo": true,
-            "demo" : {}
+            "description": "SocialSaver is a React-based web application designed to provide an intuitive interface for managing photos via Facebook's API. This application offers seamless integration with Facebook, allowing users to view, filter, and download photos directly from their Facebook albums.",
+            "component": "social-saver"
         },
         {
             "name" : "Dataset Generator",
             "image" : "/images/DatasetGen.png",
             "github" : "https://github.com/Tishinator/Dataset-Generator",
             "description": "The DatasetGenerator.py script is a Python program designed to apply transformations on an image. These transformations will create a dataset from the single image to be used in machine learning. Original project was done for a machine learning project in college, but was branched out for uses on other projects.",
-            "hasDemo": false,
-            "demo" : {}
+            "component": "dataset-generator"
         }
     ]
 }

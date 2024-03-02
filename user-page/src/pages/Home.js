@@ -11,7 +11,7 @@ function Home() {
   const darkMode = theme === 'dark';
   let bkgrd = darkMode ? 'black' : 'white';
   
-  useDocumentTitle('Tishinator Home');
+  useDocumentTitle('Tish\'s User Page');
 
   return (
     <div>

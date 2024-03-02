@@ -1,0 +1,72 @@
+ 
+  .darkTitle {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+  }
+  
+  .lightTitle {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+  }
+  
+  .titleStyle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 7.5vh;
+    font-size: 1.5vw;
+    width: 100%;
+    height: 5vh;
+  }
+  
+  .overlayStyle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 20px;
+    color: white;
+    opacity: 1;
+    transition: background-color 0.5s ease; /* Smooth transition for background color */
+    background-color: rgba(0, 0, 0, 0.5); /* Default background color */
+  }
+  
+  .cardZoomStyle:hover .overlayStyle {
+    background-color: rgba(0, 0, 0, 0.2); /* Lighter background color on hover */
+  }
+
+
+  .cardZoomStyle {
+    transition: transform 0.5s ease;
+    display: inline-block;
+    width: 100%;
+  }
+  
+  .cardStyle {
+    width: 100%;
+    height: 15vw;
+    object-fit: none;
+    border-radius: 5%;
+  }
+  
+  .projectHeaderStyle {
+    font-size: 2.5vw;
+    font-weight: bold;
+    text-align: start;
+    padding-bottom: 2vh;
+  }
+  
+  .bottomRow {
+    position: absolute;
+    bottom: 3.5vh;
+    left: 0;
+    right: 0;
+  }
+  

@@ -1,89 +1,65 @@
 import React, { useState, useContext } from 'react';
-import { Button, Card, Col, Container, Row } from 'react-bootstrap';
+import { Button, Card, Col, Container, Modal, Row } from 'react-bootstrap';
 import projectsJson from '../data/json/projects.json';
 import { AppThemeContext } from "../context/AppThemeContext";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faCircleInfo } from '@fortawesome/free-solid-svg-icons';
+import styles from './css/Projects.module.css';
+import Skills from '../components/Skills'
+import SocialSaver from './projects/SocialSaver';
 
 const Projects = () => {
-    const { theme, toggleTheme } = useContext(AppThemeContext);
+    const { theme } = useContext(AppThemeContext);
+    const [hoveredCard, setHoveredCard] = useState(null);
+    const [showModal, setShowModal] = useState(false);
+    const [selectedProject, setSelectedProject] = useState({});
+    
+    const modalThemeClass = theme === 'dark' ? 'bg-dark text-white' : '';
+
+
     let isDarkMode = theme === 'dark';
 
-    const darkTitle = {
-        backgroundColor: 'rgba(0, 0, 0, 0.8)',
-        color: 'white',
+    const handleMoreDetails = (project) => {
+        setSelectedProject(project);
+        setShowModal(true);
+    };
 
+    const projectComponentMapping = {
+        'ptcg-deckbuilder' : Skills,
+        'social-saver' : SocialSaver,
+        'dataset-generator': Skills
     }
 
-    const lightTitle = {
-        backgroundColor: 'rgba(255, 255, 255, 0.8)',
-        color: 'black',
-
+    function ProjectModal({ project }) {
+        const ProjectDetails = projectComponentMapping[project.component];
+        return (
+            <Modal show={showModal} onHide={() => setShowModal(false)} size='xl' contentClassName={modalThemeClass} >
+                <Modal.Header closeButton>
+                    <Modal.Title>{project.name}</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    {project.description}
+                    
+                    {ProjectDetails ? <ProjectDetails /> : <p>Component not found</p>}
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button variant='primary'
+                            size='lg'
+                            onClick={() => window.open(project.github, '_blank', 'noopener,noreferrer')}>
+                        <FontAwesomeIcon icon={faGithub} /> Github
+                    </Button>
+                    <Button variant='danger' size='lg' onClick={()=>setShowModal(false)}>Close</Button>
+                </Modal.Footer>
+            </Modal>
+        );
     }
-
-    const titleStyle = {
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        position: 'absolute',
-        left: 0,
-        right: 0,
-        top: '7.5vh',
-        fontSize: '1.5vw', // Adjusted for better visibility at various sizes
-        // padding: '10px', // Optional: Adjust padding as needed
-        // borderRadius: '5px', // Optional: Add rounded corners if desired
-        width: '100%',
-        height: '5vh',
-        
-
-    };
-
-    const overlayStyle = {
-        // backgroundColor: 'rgba(0, 0, 0, 0.5)',
-        position: 'absolute',
-        top: 0,
-        bottom: 0,
-        left: 0,
-        right: 0,
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'flex-start',
-        padding: '20px',
-        color: 'white',
-        opacity: 1, // Always visible
-        transition: 'transform 1s ease',
-    };
-
-    const cardZoomStyle = {
-        transition: 'transform 0.5s ease', // Smooth zoom transition
-        display: 'inline-block', // Required for transform
-        width: '100%', // Ensure it fills the column
-    };
-
-    const cardStyle = {
-        width: '100%', // Use 100% of the wrapper's width
-        height: '15vw', // Set a scalable height based on the viewport width
-        objectFit: 'none', // Ensure images cover the card size without distortion
-        borderRadius: '5%'
-    };
-
-
-    const cardBodyStyle = {
-
-    };
-
-    const projectHeaderStyle = {
-        fontSize: '2.5vw',
-        fontWeight: 'bold',
-        textAlign: 'start',
-        paddingBottom: '2vh'
-    }
-
-    const [hoveredCard, setHoveredCard] = useState(null);
 
     return (
         <Container>
             <Row>
-                <Col style={projectHeaderStyle}>
-                    <span >Projects</span>
+                <Col className={styles.projectHeaderStyle}>
+                    <span>Projects</span>
                 </Col>
             </Row>
             <Row>
@@ -92,43 +68,38 @@ const Projects = () => {
                         <div
                             onMouseEnter={() => setHoveredCard(index)}
                             onMouseLeave={() => setHoveredCard(null)}
+                            className={styles.cardZoomStyle}
                             style={{
-                                ...cardZoomStyle,
                                 transform: hoveredCard === index ? 'scale(1.05)' : 'scale(1)',
                             }}
                         >
-                            <Card style={cardStyle}>
-                                <Card.Img variant="top" src={project.image} style={cardStyle} />
-                                <Card.ImgOverlay style={{
-                                                    ...overlayStyle,
-                                                    backgroundColor: hoveredCard === index ?  'rgba(0, 0, 0, 0.2)' : 'rgba(0, 0, 0, 0.5)',
-                                                    }}>
-                                    <Card.Title style={{...titleStyle, ...(isDarkMode ? darkTitle : lightTitle)}} >{project.name}</Card.Title>
-                                    <Card.Body  style={cardBodyStyle}>
-                                        <Row style={{
-                                                position: 'absolute',
-                                                bottom: '3vh',
-                                                left: 0,
-                                                right: 0,
-                                        }} className='g-0'>
+                            <Card className={styles.cardStyle}>
+                                <Card.Img variant="top" src={project.image} className={styles.cardStyle} />
+                                <Card.ImgOverlay className={`${styles.overlayStyle} ${hoveredCard === index ? 'bg-hover' : ''}`} >
+                                    <Card.Title className={`${styles.titleStyle} ${isDarkMode ? styles.darkTitle : styles.lightTitle}`} >{project.name}</Card.Title>
+                                    <Card.Body>
+                                        <Row className={`g-0 ${styles.bottomRow}`}>
                                             <Col>
-                                                    <Button variant='primary'
-                                                     size='lg'
-                                                     onClick={() => window.open(project.github, '_blank', 'noopener,noreferrer')}>Github</Button>
+                                                <Button variant='primary'
+                                                        size='lg'
+                                                        onClick={() => window.open(project.github, '_blank', 'noopener,noreferrer')}>
+                                                    <FontAwesomeIcon icon={faGithub} /> Github
+                                                </Button>
                                             </Col>
                                             <Col>
-                                                    <Button variant='success' size='lg' onClick={() => alert("I didnt implement this yet.")}>More Details</Button>
+                                                <Button variant='success' size='lg' onClick={() => handleMoreDetails(project)}>
+                                                    <FontAwesomeIcon icon={faCircleInfo} /> More Details
+                                                </Button>
                                             </Col>
                                         </Row>
                                     </Card.Body>
- 
                                 </Card.ImgOverlay>
-   
                             </Card>
                         </div>
                     </Col>
                 ))}
             </Row>
+            <ProjectModal project={selectedProject} />
         </Container>
     );
 };
