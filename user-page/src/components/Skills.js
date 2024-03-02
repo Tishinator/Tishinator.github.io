@@ -1,7 +1,3 @@
-import skillsJson from '../data/json/skills.json'
-import { ProgressBar, Container, Row, Col } from 'react-bootstrap';
-
-
 function Skills() {
     return (
         <>
