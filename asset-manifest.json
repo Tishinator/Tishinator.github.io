@@ -1,20 +1,22 @@
 {
   "files": {
-    "main.css": "/static/css/main.ec10d604.css",
-    "main.js": "/static/js/main.5a6ee81d.js",
+    "main.css": "/static/css/main.a2b90141.css",
+    "main.js": "/static/js/main.65c09ff0.js",
     "static/js/787.f8320b4c.chunk.js": "/static/js/787.f8320b4c.chunk.js",
+    "static/media/socialsaver_demo.mp4": "/static/media/socialsaver_demo.080ddbac2af7d395f223.mp4",
+    "static/media/db2.PNG": "/static/media/db2.3783345eab054a6799aa.PNG",
     "static/media/mt.png": "/static/media/mt.f1dc6259b6f055423fc6.png",
-    "static/media/fitimg.jpg": "/static/media/fitimg.b9bbea28c8cf3d942f2c.jpg",
-    "static/media/Tishman_resume_July2023.pdf": "/static/media/Tishman_resume_July2023.b93fd5004ba6673eb1e0.pdf",
-    "static/media/github-circle-svgrepo-com.svg": "/static/media/github-circle-svgrepo-com.e2461e5e42861afa4e306790f0561b89.svg",
-    "static/media/linkedin-svgrepo-com.svg": "/static/media/linkedin-svgrepo-com.fad6cb3b7ce0a6b6474fa2bc8ce52bc7.svg",
+    "static/media/updatedMe.png": "/static/media/updatedMe.2983cbe4e87d152258d6.png",
+    "static/media/fitLogo.png": "/static/media/fitLogo.cd13fb48b5f4b0537e12.png",
+    "static/media/DatasetGen.png": "/static/media/DatasetGen.d9429f27fe2c8f6b0b4f.png",
+    "static/media/background.jpg": "/static/media/background.15f2b1b7a6fb6740fbf8.jpg",
     "index.html": "/index.html",
-    "main.ec10d604.css.map": "/static/css/main.ec10d604.css.map",
-    "main.5a6ee81d.js.map": "/static/js/main.5a6ee81d.js.map",
+    "main.a2b90141.css.map": "/static/css/main.a2b90141.css.map",
+    "main.65c09ff0.js.map": "/static/js/main.65c09ff0.js.map",
     "787.f8320b4c.chunk.js.map": "/static/js/787.f8320b4c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ec10d604.css",
-    "static/js/main.5a6ee81d.js"
+    "static/css/main.a2b90141.css",
+    "static/js/main.65c09ff0.js"
   ]
 }
