@@ -3,7 +3,7 @@ import vid from '../../assets/videos/socialsaver_demo.mp4'
 function SocialSaver() {
     const bottomSpacing = "mb-1"
     const textStyle = {
-      fontSize: '0.8vw'
+      fontSize: '1rem'
     }
     return (
       <Container style={textStyle}>
@@ -57,7 +57,7 @@ function SocialSaver() {
 
         <Row>
           <Col xs={12} className="d-flex justify-content-center">
-            <video style={{'height': '50vh'}} controls>
+            <video style={{'height': '50vh', 'maxWidth': '85vw', 'object-fit': 'contain'}} controls>
               <source src={vid} type="video/mp4" />
               Your browser does not support the video tag.
             </video>

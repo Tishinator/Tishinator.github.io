@@ -4,7 +4,7 @@ import appImage from '../../assets/DatasetGen.png'
 function DatasetGenerator() {
     const bottomSpacing = "mb-1"
     const textStyle = {
-      fontSize: '0.8vw'
+      fontSize: '1rem'
     }
     return(
         <Container style={textStyle}>
@@ -38,7 +38,7 @@ function DatasetGenerator() {
                     </Row>
                 </Col>
                 <Col>
-                    <Image src={appImage} width={'auto'} height={'500px'} style={{"paddingLeft":"2.5vw"}} rounded />
+                    <Image src={appImage} width={'auto'} height={'500px'} style={{"paddingLeft":"2.5vw", 'maxWidth': '85vw', 'object-fit': 'contain'}} rounded />
                 </Col>
                 
             </Row>

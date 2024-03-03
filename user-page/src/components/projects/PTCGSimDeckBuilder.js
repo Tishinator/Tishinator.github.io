@@ -62,7 +62,7 @@ function PTCGSimDeckBuilder() {
                     </Row>
                 </Col>
                 <Col>
-                    <Image src={appImage} width={'auto'} height={'500px'} rounded />
+                    <Image src={appImage} width={'auto'} height={'500px'} style={{'maxWidth': '85vw', 'object-fit': 'contain'}}rounded />
                 </Col>
                 
             </Row>
