@@ -11,7 +11,7 @@
             "name" : "Social Saver",
             "image" : "/images/socialsaver.PNG",
             "github" : "https://github.com/Tishinator/SocialSaver-ui",
-            "description": "SocialSaver is a React-based web application designed to provide an intuitive interface for managing photos via Facebook's API. This application offers seamless integration with Facebook, allowing users to view, filter, and download photos directly from their Facebook albums.",
+            "description": "SocialSaver is a React-based web application with a Django backend, designed to provide an intuitive interface for managing photos via Facebook's API. This application offers seamless integration with Facebook, allowing users to view and download photos directly from their Facebook albums.",
             "component": "social-saver"
         },
         {

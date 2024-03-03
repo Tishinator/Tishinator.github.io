@@ -35,11 +35,11 @@
     color: white;
     opacity: 1;
     transition: background-color 0.5s ease; /* Smooth transition for background color */
-    background-color: rgba(0, 0, 0, 0.5); /* Default background color */
+    background-color: rgba(0, 0, 0, 0.25); /* Default background color */
   }
   
   .cardZoomStyle:hover .overlayStyle {
-    background-color: rgba(0, 0, 0, 0.2); /* Lighter background color on hover */
+    background-color: rgba(0, 0, 0, 0); /* Lighter background color on hover */
   }
 
 

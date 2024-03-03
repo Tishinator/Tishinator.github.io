@@ -6,8 +6,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faCircleInfo } from '@fortawesome/free-solid-svg-icons';
 import styles from './css/Projects.module.css';
-import Skills from '../components/Skills'
 import SocialSaver from './projects/SocialSaver';
+import PTCGSimDeckBuilder from './projects/PTCGSimDeckBuilder';
+import DatasetGenerator from './projects/DatasetGenerator';
 
 const Projects = () => {
     const { theme } = useContext(AppThemeContext);
@@ -26,9 +27,9 @@ const Projects = () => {
     };
 
     const projectComponentMapping = {
-        'ptcg-deckbuilder' : Skills,
+        'ptcg-deckbuilder' : PTCGSimDeckBuilder,
         'social-saver' : SocialSaver,
-        'dataset-generator': Skills
+        'dataset-generator': DatasetGenerator
     }
 
     function ProjectModal({ project }) {
@@ -38,18 +39,16 @@ const Projects = () => {
                 <Modal.Header closeButton>
                     <Modal.Title>{project.name}</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>
-                    {project.description}
-                    
+                <Modal.Body>                  
                     {ProjectDetails ? <ProjectDetails /> : <p>Component not found</p>}
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant='primary'
-                            size='lg'
+                            size='md'
                             onClick={() => window.open(project.github, '_blank', 'noopener,noreferrer')}>
                         <FontAwesomeIcon icon={faGithub} /> Github
                     </Button>
-                    <Button variant='danger' size='lg' onClick={()=>setShowModal(false)}>Close</Button>
+                    <Button variant='secondary' size='md' onClick={()=>setShowModal(false)}>Close</Button>
                 </Modal.Footer>
             </Modal>
         );

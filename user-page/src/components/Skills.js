@@ -31,7 +31,7 @@ function Skills() {
                     <li><strong>Development Practices:</strong> Agile methodologies, Test-Driven Development (TDD), Continuous Integration (CI), and Continuous Deployment (CD).</li>
                 </ul>
                 
-                <h3>Soft Skills:</h3>
+                <h3>Business Skills:</h3>
                 <ul>
                     <li><strong>Problem-Solving:</strong> Strong analytical skills with a proven track record of debugging and resolving complex issues in software applications.</li>
                     <li><strong>Team Collaboration:</strong> Effective at working in team settings, contributing to team meetings, and providing insights to drive project success.</li>
