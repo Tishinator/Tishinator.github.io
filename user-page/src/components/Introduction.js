@@ -35,11 +35,11 @@ function Introduction() {
                             <Carousel controls={false} indicators={false}>
                                 {carouselItems.map((item, index) => (
                                     <Carousel.Item key={index} interval={2000}>
-                                    <div className="mb-2 h4">{item}</div>
+                                        <div className="mb-2 h4">{item}</div>
                                     </Carousel.Item>
                                 ))}
                             </Carousel>
-                            <div className="mb-2 display-4">
+                            <div className={`mb-2 display-4 ${styles.introText}`}>
                                 Hi, I'm <span className={styles.nameText}>Mike</span>
                             </div>
                         </div>

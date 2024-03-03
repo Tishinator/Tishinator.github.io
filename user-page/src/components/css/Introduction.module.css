@@ -14,14 +14,19 @@
     object-fit: contain; /* This ensures the image maintains its aspect ratio */
     bottom: 0;
     right: 0;
+    left: 76vw;
+    top: 25vh;
     position: fixed;
 }
 
 .nameText {
     color: rgb(255, 0, 128);
-    font-size: 4rem; 
+    /* font-size: 4rem;  */
 }
 
+.introText {
+    font-size: 4rem;
+}
 
 .verticallyCenteredText {
     display: flex;
@@ -48,19 +53,32 @@
     background-color: rgba(255, 255, 255, 0.8);
 }
 
-@media (max-width: 800px) {
+@media (max-width: 600px) {
     .userProfileImage {
         top: 35vh;
         max-width: 75vw;
         left: 30vw;
     }
 
-    .nameText {
-        color: rgb(255, 0, 128);
+    .introText {
+        /* color: rgb(255, 0, 128); */
         font-size: 2rem; 
     }
 
     .textContainer {
         height: 15vh;
+    }
+}
+
+@media (orientation: landscape) and (max-width: 1000px) {
+    .introText {
+        /* color: rgb(255, 0, 128); */
+        font-size: 2rem; 
+    }
+
+    .userProfileImage {
+        top: 35vh;
+        /* max-width: 75vw; */
+        left: 79vw;
     }
 }
