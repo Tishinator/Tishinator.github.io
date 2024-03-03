@@ -29,7 +29,8 @@ const Education = () => {
             
             paddingBottom: '0.5vw',
             width: '80%', 
-          },
+        },
+        
       };
     return (
         <Container>

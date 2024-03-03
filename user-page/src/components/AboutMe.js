@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useContext } from "react";
+import { useState, useEffect, useContext } from "react";
 import styles from './css/AboutMe.module.css';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -29,44 +29,106 @@ function AboutMe(){
       setActiveTab(selectedKey);
     };
 
-return(
-    <Container fluid>
-        <Row >
-            <Col>
-                <Image src={me} alt="ME"  className={styles.photo}/>
-            </Col>
-            <Col md={8}>
-                <Row><div className={styles.greeting}>{aboutmeContent.greeting}</div></Row>
-                <Row><div className={styles.intro}>{aboutmeContent.introduction}</div></Row>
-                <Row>
-                    <div className={styles.bio}>
-                        <EmphasizeText text={aboutmeContent.bio} emphasize={["Python", "Java", "JavaScript", "Vue", "React", "Florida Institute of Technology"]}/>
-                    </div>
-                </Row>
-                <Row>
-                <Navbar style={{ backgroundColor: 'transparent' }} >
-                        <Container fluid>
-                            <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                            <Navbar.Collapse id="basic-navbar-nav" className="justify-content-center">
-                                <Nav variant='underline' defaultActiveKey="Education" onSelect={handleSelect} >
-                                    <Nav.Link eventKey="Education" className={themedTextColor}>Education</Nav.Link>
-                                    <Nav.Link eventKey="Skills" className={themedTextColor}>Skills</Nav.Link>
-                                    <Nav.Link eventKey="Experience" className={themedTextColor}>Experience</Nav.Link>
-                                </Nav>
-                            </Navbar.Collapse>
-                        </Container>
-                </Navbar>
-                    <div style={{paddingTop: '1vh'}}>
-                        {activeTab === 'Education' && <div><Education/></div>}
-                        {activeTab === 'Skills' && <div><Skills /></div>}
-                        {activeTab === 'Experience' && <div><Experience/></div>}
-                    </div>
-                </Row>
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 600);
 
-            </Col>
-        </Row>
-    </Container>
-);
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 600);
+        };
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    function DesktopAboutMe(){
+        return(
+        <Container fluid>
+            <Row>
+                <Col className="p-0 m-0">
+                    <Image src={me} alt="ME"  className={styles.photo}/>
+                </Col>
+                <Col md={8}>
+                    <Row><div className={styles.greeting}>{aboutmeContent.greeting}</div></Row>
+                    <Row><div className={styles.intro}>{aboutmeContent.introduction}</div></Row>
+                    <Row>
+                        <div className={styles.bio}>
+                            <EmphasizeText text={aboutmeContent.bio} emphasize={["Python", "Java", "JavaScript", "Vue", "React", "Florida Institute of Technology"]}/>
+                        </div>
+                    </Row>
+                    <Row>
+                    <Navbar style={{ backgroundColor: 'transparent' }} >
+                            <Container fluid>
+                                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                                <Navbar.Collapse id="basic-navbar-nav" className="justify-content-center">
+                                    <Nav variant='underline' defaultActiveKey="Education" onSelect={handleSelect} >
+                                        <Nav.Link eventKey="Education" className={themedTextColor}>Education</Nav.Link>
+                                        <Nav.Link eventKey="Skills" className={themedTextColor}>Skills</Nav.Link>
+                                        <Nav.Link eventKey="Experience" className={themedTextColor}>Experience</Nav.Link>
+                                    </Nav>
+                                </Navbar.Collapse>
+                            </Container>
+                    </Navbar>
+                        <div style={{paddingTop: '1vh'}}>
+                            {activeTab === 'Education' && <div><Education/></div>}
+                            {activeTab === 'Skills' && <div><Skills /></div>}
+                            {activeTab === 'Experience' && <div><Experience/></div>}
+                        </div>
+                    </Row>
+
+                </Col>
+            </Row>
+        </Container>
+        );
+    }
+
+    function MobileAboutMe(){
+        return(
+        <Container fluid>
+            <Row>
+                <Col className="p-0 m-0">
+                    <Image src={me} alt="ME"  className={styles.photo}/>
+                </Col>
+            </Row>
+            <Row>
+                <Col md={8}>
+                    <Row><div className={styles.greeting}>{aboutmeContent.greeting}</div></Row>
+                    <Row><div className={styles.intro}>{aboutmeContent.introduction}</div></Row>
+                    <Row>
+                        <div className={styles.bio}>
+                            <EmphasizeText text={aboutmeContent.bio} emphasize={["Python", "Java", "JavaScript", "Vue", "React", "Florida"]}/>
+                        </div>
+                    </Row>
+                    <Row>
+                    <Navbar style={{ backgroundColor: 'transparent' }} >
+                            <Container fluid>
+                                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                                <Navbar.Collapse id="basic-navbar-nav" className="justify-content-center">
+                                    <Nav variant='underline' defaultActiveKey="Education" onSelect={handleSelect} >
+                                        <Nav.Link eventKey="Education" className={themedTextColor}>Education</Nav.Link>
+                                        <Nav.Link eventKey="Skills" className={themedTextColor}>Skills</Nav.Link>
+                                        <Nav.Link eventKey="Experience" className={themedTextColor}>Experience</Nav.Link>
+                                    </Nav>
+                                </Navbar.Collapse>
+                            </Container>
+                    </Navbar>
+                        <div style={{paddingTop: '1vh'}}>
+                            {activeTab === 'Education' && <div><Education/></div>}
+                            {activeTab === 'Skills' && <div><Skills /></div>}
+                            {activeTab === 'Experience' && <div><Experience/></div>}
+                        </div>
+                    </Row>
+
+                </Col>
+            </Row>
+        </Container>
+        );
+    }
+
+    return(
+        <div>
+            {isMobile ? <MobileAboutMe /> : <DesktopAboutMe />}
+        </div>
+    );
 }
 
 export default AboutMe

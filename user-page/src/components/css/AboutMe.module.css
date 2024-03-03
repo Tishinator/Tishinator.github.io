@@ -38,3 +38,44 @@
     max-height: 40vh; /* Add this line to ensure the image does not exceed the viewport height */
     object-fit: contain; /* This ensures the image maintains its aspect ratio */
 }
+
+@media (max-width: 600px) {
+  .photo {
+    margin-top: 4vh;
+    max-width: 20vw;
+    height: 20vh;
+  }
+  .bio {
+    text-align: left;
+    margin: 5px;
+    font-size: 0.7rem;
+    padding-left: 5px;
+  }
+  
+  .greeting {
+    text-align: left;
+    font-size: 0.7rem;
+    font-weight: bold;
+    padding-left: 10px;
+    margin-top:-3vh;
+  }
+  
+  .intro {
+    text-align: left;
+    font-size: 0.7rem;
+    padding-left: 10px;
+  }
+}
+
+/* 
+@media (orientation: landscape) and (max-width: 1000px) {
+  .introText {
+      font-size: 2rem; 
+  }
+
+  .userProfileImage {
+      top: 35vh;
+
+      left: 79vw;
+  }
+} */
