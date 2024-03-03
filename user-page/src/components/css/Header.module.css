@@ -2,3 +2,31 @@
     color: rgb(255, 0, 128);
     font-size: 1.4rem; 
 }
+
+/* Header.module.css updates */
+.navbarContent {
+    display: flex;
+    justify-content: space-between; /* Ensure items are spaced out */
+    width: 100%; /* Take full width to space out brand and toggle */
+}
+
+.themeToggle {
+    margin-left: 1vw; /* Push the theme toggle to the right */
+}
+
+@media (max-width: 992px) {
+    .nameHeader {
+        display: none;
+    }
+
+    .navbarContent {
+        flex-direction: row-reverse; /* Flip order for mobile: toggle on the left, brand on the right */
+    }
+    .themeToggle {
+        margin-left: 0; /* Remove margin-left on smaller screens if necessary */
+        padding-right: 20px; 
+    }
+    .navbar-toggler {
+        order: -1; /* Try to move toggler to the start if not automatically positioned correctly */
+    }
+}

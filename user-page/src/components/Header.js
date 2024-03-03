@@ -10,6 +10,7 @@ const Header = () => {
     const darkMode = theme === 'dark';
 
     const [activeSection, setActiveSection] = useState('');
+    const [showThemeToggle, setShowThemeToggle] = useState(true);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -43,23 +44,67 @@ const Header = () => {
         }
     };
 
+    useEffect(() => {
+      const toggler = document.querySelector('.navbar-toggler');
+  
+      const checkNavbarToggler = () => {
+          const isTogglerVisible = window.getComputedStyle(toggler).display !== 'none';
+          const isTogglerCollapsed = toggler.getAttribute('class').includes("collapsed");
+  
+          // Hide theme toggle if toggler is visible and not collapsed
+          if (isTogglerVisible && !isTogglerCollapsed) {
+              setShowThemeToggle(false);
+          } else {
+              setShowThemeToggle(true);
+          }
+      };
+  
+      // Observer to watch class changes on the navbar-toggler
+      const observer = new MutationObserver(mutations => {
+          mutations.forEach(mutation => {
+              if (mutation.type === "attributes" && mutation.attributeName === "class") {
+                  checkNavbarToggler();
+              }
+          });
+      });
+  
+      // Observe changes in attributes of the navbar-toggler
+      observer.observe(toggler, {
+          attributes: true // configure it to listen to attribute changes
+      });
+  
+      // Check on resize and on document load
+      window.addEventListener('resize', checkNavbarToggler);
+      window.addEventListener('load', checkNavbarToggler);
+      checkNavbarToggler(); // Initial check
+  
+      return () => {
+          window.removeEventListener('resize', checkNavbarToggler);
+          window.removeEventListener('load', checkNavbarToggler);
+          observer.disconnect(); // Stop observing when component unmounts
+      };
+  }, []); // Empty dependency array means this effect runs once on mount and cleanup on unmount
+  
+
     return (
-        <Navbar bg={darkMode ? "dark" : "light"} variant={darkMode ? "dark" : "light"} fixed='top' expand="lg">
-            <Container fluid>
-                <Navbar.Brand><span className={styles.nameText}>Mike</span> Tishman</Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
-                    <Nav variant='underline'>
-                        <Nav.Link onClick={() => scrollToSection('home')} className={activeSection === 'home' ? 'active' : ''}>Home</Nav.Link>
+      <Navbar bg={darkMode ? "dark" : "light"} variant={darkMode ? "dark" : "light"} fixed='top' expand="lg">
+          <Container fluid className={styles.navbarContent}>
+              <Navbar.Brand className={styles.nameHeader}><span className={styles.nameText}>Mike</span> Tishman</Navbar.Brand>
+              <Navbar.Toggle aria-controls="basic-navbar-nav" />
+              <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
+                  <Nav variant='underline'>
+                    <Nav.Link onClick={() => scrollToSection('home')} className={activeSection === 'home' ? 'active' : ''}>Home</Nav.Link>
                         <Nav.Link onClick={() => scrollToSection('about-me')} className={activeSection === 'about-me' ? 'active' : ''}>About Me</Nav.Link>
                         <Nav.Link onClick={() => scrollToSection('projects')} className={activeSection === 'projects' ? 'active' : ''}>Projects</Nav.Link>
-                    </Nav>
-                </Navbar.Collapse>
-                <div style={{ paddingLeft: '20px' }}>
-                    <FontAwesomeIcon icon={darkMode ? farMoon : fasSun} onClick={toggleTheme} size='xl'/>
-                </div>
-            </Container>
-        </Navbar>
+                  </Nav>
+              </Navbar.Collapse>
+              {showThemeToggle && (
+                  <div className={styles.themeToggle}>
+                      <FontAwesomeIcon icon={darkMode ? farMoon : fasSun} onClick={toggleTheme} size='xl'/>
+                  </div>
+              )}
+          </Container>
+      </Navbar>
     );
 };
 
