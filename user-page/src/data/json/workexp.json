@@ -4,7 +4,7 @@
         "jobTitle": "Software Engineer III",
         "company": "ENSCO, Inc.",
         "timeFrame": "2019 - Present",
-        "skillHighlights": ["Python", "Selenium", "VueJS"],
+        "skillHighlights": ["Python", "VueJS"],
         "jobDescription": "<ul><li>Developed and expanded automated testing using Selenium and integrated them into Jenkins.</li><li>Wrote Python code to improve software projects and addressed security vulnerabilities.</li><li>Led the integration of software projects, including setup of MATLAB and Python environments.</li><li>Participated in software development projects to meet Air Force customer requirements.</li></ul>"
       },
       {
@@ -18,7 +18,7 @@
         "jobTitle": "Software Testing Internship",
         "company": "ENSCO, Inc.",
         "timeFrame": "2016 – 2017",
-        "skillHighlights": ["TestComplete", "Java"],
+        "skillHighlights": ["TestComplete"],
         "jobDescription": "<ul><li>Designed and programmed automated regression tests for applications.</li><li>Updated older tests to work with new software testing tools.</li></ul>"
       },
       {

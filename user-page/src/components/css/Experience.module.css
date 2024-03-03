@@ -1,0 +1,61 @@
+/* Experience.module.css */
+
+/* General styles for the accordion that apply at all times */
+.accordionItem {
+    font-size: 0.9rem; /* Adjust base font size */
+}
+
+.accordionBody {
+    padding: 0.5rem 1rem; /* Reduce padding inside the accordion body */
+}
+
+.headerText {
+    font-size: 1rem;
+}
+
+.skillRow {
+    --bs-gutter-x: 0.5rem; /* Adjust horizontal spacing between skill badges */
+    justify-content: flex-end; 
+}
+
+.skillCol {
+    flex: 0 0; 
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 0.25rem;
+    padding-left: 0.25rem; 
+}
+
+
+/* Styles for mobile screens */
+@media (max-width: 768px) {
+    .accordionItem {
+        font-size: 0.5rem; /* Further reduce font size for mobile */
+    }
+
+    .accordionBody {
+        /* padding: 0.25rem 0.5rem; */
+    }
+
+    .headerText {
+        font-size: 0.5rem;
+    }
+
+    .skillBadge {
+        font-size: 0.5rem; /* Adjust skill badge font size for mobile */
+    }
+
+    .skillRow {
+        --bs-gutter-x: 1.5rem; /* Adjust horizontal spacing between skill badges */
+        justify-content: flex-end;
+        padding-right: 2vw; 
+    }
+    
+    .skillCol {
+        flex: 0 0; 
+        display: flex;
+        justify-content: flex-end;
+        padding-right: 0.1rem;
+        padding-left: 0.1rem; 
+    }
+}

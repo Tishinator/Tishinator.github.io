@@ -1,0 +1,58 @@
+.educationCol {
+    font-weight: bold;
+}
+
+.educationSchool {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 1.5vw; /* Adjust the size as needed */
+    padding-bottom: 0.5vw;
+}
+
+.educationDegreeYear {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 1vw; /* Adjust the size as needed */
+}
+
+.schoolBorderSpan {
+    display: inline-block;
+    border-bottom: 2px solid rgb(255, 0, 128);
+    padding-bottom: 0.5vw;
+    width: 80%;
+}
+
+.schoolLogo {
+    height: 10vh;
+    width: auto;
+}
+
+@media (max-width: 600px) {
+    .educationSchool {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 2vh;
+        padding-bottom: 0.5vw;
+    }
+    .educationDegreeYear {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 1.5vh;
+    }
+
+    .schoolBorderSpan {
+        display: inline-block;
+        border-bottom: 2px solid rgb(255, 0, 128);
+        padding-bottom: 1vw;
+        width: 80%;
+    }
+
+    .schoolLogo {
+        height: 5vh;
+        width: auto;
+    }
+}

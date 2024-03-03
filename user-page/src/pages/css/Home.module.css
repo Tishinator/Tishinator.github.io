@@ -1,41 +1,36 @@
 .pageContainer {
     display: flex;
     flex-wrap: wrap;
+    width: 100%;
 }
-
-.leftPanel {
-    position: fixed;
-    height: 100vh;
-    width: 20vw; /* Matches the flex-basis */
-    margin-top: 13vh;
-    padding-left: 100px;
-}
-
 .centerPanel {
     flex-grow: 1;
     padding-top: 10vh;
     padding-left: 12vw; 
     padding-right: 12vw; 
-    overflow: auto;
+    /* overflow: auto; */
     position: relative;
-    height: 100vh;
-}
-
-
-.skillDiv {
+    /* height: 100vh; */
+    margin: 0 auto;
     display: flex;
-    flex-direction: row;
-    align-items: stretch;
+    flex-direction: column;
+    justify-content: start;
+    min-height: 100vh;
 }
 
 @media (max-width: 600px) {
     .centerPanel {
         flex-grow: 1;
-        padding-top: 1.5vh;
+        /* padding-top: 0vh; */
         padding-left: 10vw; 
         padding-right: 10vw; 
-        overflow: auto; 
+        /* overflow: auto;  */
         position: relative;
-        height: 100vh;
+        /* height: 100vh; */
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        min-height: 150vh;
     }
 }

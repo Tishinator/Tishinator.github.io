@@ -60,11 +60,12 @@ function AboutMe(){
                             <Container fluid>
                                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                                 <Navbar.Collapse id="basic-navbar-nav" className="justify-content-center">
-                                    <Nav variant='underline' defaultActiveKey="Education" onSelect={handleSelect} >
-                                        <Nav.Link eventKey="Education" className={themedTextColor}>Education</Nav.Link>
-                                        <Nav.Link eventKey="Skills" className={themedTextColor}>Skills</Nav.Link>
-                                        <Nav.Link eventKey="Experience" className={themedTextColor}>Experience</Nav.Link>
-                                    </Nav>
+                                <Nav variant='underline' defaultActiveKey="Education" onSelect={handleSelect} >
+                                    <Nav.Link eventKey="Education" className={themedTextColor} active={activeTab === 'Education'}>Education</Nav.Link>
+                                    <Nav.Link eventKey="Skills" className={themedTextColor} active={activeTab === 'Skills'}>Skills</Nav.Link>
+                                    <Nav.Link eventKey="Experience" className={themedTextColor} active={activeTab === 'Experience'}>Experience</Nav.Link>
+                                </Nav>
+
                                 </Navbar.Collapse>
                             </Container>
                     </Navbar>
@@ -95,7 +96,7 @@ function AboutMe(){
                     <Row><div className={styles.intro}>{aboutmeContent.introduction}</div></Row>
                     <Row>
                         <div className={styles.bio}>
-                            <EmphasizeText text={aboutmeContent.bio} emphasize={["Python", "Java", "JavaScript", "Vue", "React", "Florida"]}/>
+                            <EmphasizeText text={aboutmeContent.bio} emphasize={["Python", "Java", "JavaScript", "Vue", "React", "Florida Institute of Technology"]}/>
                         </div>
                     </Row>
                     <Row>
@@ -111,7 +112,7 @@ function AboutMe(){
                                 </Navbar.Collapse>
                             </Container>
                     </Navbar>
-                        <div style={{paddingTop: '1vh'}}>
+                        <div style={{paddingTop: '1vh', marginBottom: '50px'}}>
                             {activeTab === 'Education' && <div><Education/></div>}
                             {activeTab === 'Skills' && <div><Skills /></div>}
                             {activeTab === 'Experience' && <div><Experience/></div>}

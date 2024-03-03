@@ -41,7 +41,7 @@
 
 @media (max-width: 600px) {
   .photo {
-    margin-top: 4vh;
+    margin-top: -5vh;
     max-width: 20vw;
     height: 20vh;
   }

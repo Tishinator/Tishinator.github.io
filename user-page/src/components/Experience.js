@@ -1,8 +1,8 @@
-import { Accordion, Container, Row, Col } from "react-bootstrap";
+import { Accordion, Container, Row, Col, Badge } from "react-bootstrap";
 import experienceData from '../data/json/workexp.json';
 import { useContext } from "react";
 import { AppThemeContext } from "../context/AppThemeContext";
-import Badge from 'react-bootstrap/Badge';
+import styles from './css/Experience.module.css'; // Import the CSS module
 
 function Experience() {
     const { theme } = useContext(AppThemeContext);
@@ -18,32 +18,30 @@ function Experience() {
         "Visual Basic" : "info"
     }
 
-
     return (
         <Accordion flush>
             {experienceData.jobs.map((job, index) => (
-                <Accordion.Item eventKey={String(index)} key={index}>
-                    <Accordion.Header>
+                <Accordion.Item eventKey={String(index)} key={index} className={styles.accordionItem}>
+                    <Accordion.Header className={styles.accordionHeader}>
                         <Container>
                             <Row>
-                                <Col><b>{job.company}</b></Col>
-                                <Col>{job.jobTitle}</Col>
+                                <Col className={styles.headerText}><b>{job.company}</b></Col>
+                                <Col className={styles.headerText}>{job.jobTitle}</Col>
                                 <Col>
-                                    <Row className="d-flex justify-content-end" style={{'--bs-gutter-x': "0.5rem"}}>
+                                    <Row className={styles.skillRow}>
                                         {job.skillHighlights.map((skill, skillIndex) => (
-                                            <Col key={skillIndex} className="d-flex justify-content-end" style={{flex: '0 0'}}>
-                                                <Badge bg={skillColors[skill]} text={["warning", "info", "light" ].includes(skillColors[skill]) ? 'dark' : ""}>
+                                            <Col key={skillIndex} className={styles.skillCol}>
+                                                <Badge bg={skillColors[skill]} text={["warning", "info", "light"].includes(skillColors[skill]) ? 'dark' : ''} className={styles.skillBadge}>
                                                     {skill}
                                                 </Badge>
                                             </Col>
                                         ))}
                                     </Row>
-                                    
                                 </Col>
                             </Row>
                         </Container>
                     </Accordion.Header>
-                    <Accordion.Body>
+                    <Accordion.Body className={styles.accordionBody}>
                         <span style={{textAlign: 'left'}} dangerouslySetInnerHTML={{ __html: job.jobDescription }} />
                     </Accordion.Body>
                 </Accordion.Item>
