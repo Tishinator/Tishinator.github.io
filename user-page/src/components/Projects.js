@@ -63,7 +63,7 @@ const Projects = () => {
             </Row>
             <Row>
                 {projectsJson.projects.map((project, index) => (
-                    <Col key={index}>
+                    <Col key={index} xs={12} md={4} className="col-12 col-md-auto">
                         <div
                             onMouseEnter={() => setHoveredCard(index)}
                             onMouseLeave={() => setHoveredCard(null)}
@@ -80,13 +80,14 @@ const Projects = () => {
                                         <Row className={`g-0 ${styles.bottomRow}`}>
                                             <Col>
                                                 <Button variant='primary'
+                                                        className={styles.bottomRowButton}
                                                         size='lg'
                                                         onClick={() => window.open(project.github, '_blank', 'noopener,noreferrer')}>
                                                     <FontAwesomeIcon icon={faGithub} /> Github
                                                 </Button>
                                             </Col>
                                             <Col>
-                                                <Button variant='success' size='lg' onClick={() => handleMoreDetails(project)}>
+                                                <Button className={styles.bottomRowButton} variant='success' size='lg' onClick={() => handleMoreDetails(project)}>
                                                     <FontAwesomeIcon icon={faCircleInfo} /> More Details
                                                 </Button>
                                             </Col>

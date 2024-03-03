@@ -4,7 +4,7 @@ import appImage from '../../assets/db2.PNG'
 function PTCGSimDeckBuilder() {
     const bottomSpacing = "mb-1"
     const textStyle = {
-      fontSize: '0.8vw'
+      fontSize: '1rem'
     }
     return(
         <Container style={textStyle}>
