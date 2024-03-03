@@ -35,19 +35,22 @@ function App() {
   },[theme]);
 
 
-  const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-  return isLocalhost ?  
-  <div className={`App ${theme === 'dark' ? 'dark-theme' : 'light-theme'}`}>
-    <Router>
-        <Header />
-        <div className='content'>
-          < Routes>
-            <Route path='/' element={<Home />} />
-          </Routes>
-        </div>
-    </Router>
-  </div>: 
-  <UnderConstruction />;
+  // const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+  // return isLocalhost ?
+  return(  
+    <div className={`App ${theme === 'dark' ? 'dark-theme' : 'light-theme'}`}>
+      <Router>
+          <Header />
+          <div className='content'>
+            < Routes>
+              <Route path='/' element={<Home />} />
+            </Routes>
+          </div>
+      </Router>
+    </div>
+  );
+  // : 
+  // <UnderConstruction />;
 
 }
 
