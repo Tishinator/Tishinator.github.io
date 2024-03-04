@@ -14,10 +14,9 @@ html, body {
   margin: 0; /* Remove default margin */
 }
 
-@media (max-width: 600px) {
-  html, body {
-    overflow-x: hidden;
+@media (max-width: 800px) {
+  body {
+      overflow-x: hidden;
   }
 }
-
 

@@ -55,9 +55,12 @@
 
 @media (max-width: 600px) {
     .userProfileImage {
-        top: 35vh;
-        max-width: 75vw;
-        left: 30vw;
+        left: auto; /* Remove the left positioning on mobile */
+        right: 0; /* Keep it aligned to the right */
+        top: 35vh; /* Adjust as necessary */
+        max-width: 75vw; /* Ensure it does not exceed the viewport width */
+        /* Ensure the image is fully visible within the viewport */
+        position: fixed; /* or 'absolute', depending on your layout needs */
     }
 
     .introText {
