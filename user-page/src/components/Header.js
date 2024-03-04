@@ -87,7 +87,7 @@ const Header = () => {
   
 
     return (
-      <Navbar bg={darkMode ? "dark" : "light"} variant={darkMode ? "dark" : "light"} fixed='top' expand="lg" style={{'max-width': '100vw'}}>
+      <Navbar bg={darkMode ? "dark" : "light"} variant={darkMode ? "dark" : "light"} fixed='top' expand="sm" style={{'max-width': '100vw'}}>
           <Container fluid className={styles.navbarContent}>
               <Navbar.Brand className={styles.nameHeader}><span className={styles.nameText}>Mike</span> Tishman</Navbar.Brand>
               <Navbar.Toggle aria-controls="basic-navbar-nav" />

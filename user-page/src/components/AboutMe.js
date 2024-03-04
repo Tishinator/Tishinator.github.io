@@ -101,7 +101,7 @@ function AboutMe(){
                     </Row>
                     <Row>
                     <Navbar style={{ backgroundColor: 'transparent' }} >
-                            <Container fluid>
+                            <Container>
                                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                                 <Navbar.Collapse id="basic-navbar-nav" className="justify-content-center">
                                 <Nav variant='underline' defaultActiveKey="Education" onSelect={handleSelect} >

@@ -6,7 +6,7 @@ import styles from './css/Education.module.css'; // Import the CSS module
 
 const Education = () => {
     return (
-        <Container>
+        <Container className={styles.educationContainer} fluid>
             <Row className='d-flex justify-content-center'>
                 <Col md={1}>
                     <Image src={FITLOGO} alt="Florida Institute of Technology's Logo"  className={styles.schoolLogo}/>
