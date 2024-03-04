@@ -2,21 +2,21 @@
     "projects":[
         {
             "name" : "PTCG-Sim Deckbuilder",
-            "image" : "/images/PTCGSimImage.PNG",
+            "image" : "/images/PTCGBack.png",
             "github" : "https://github.com/Tishinator/PTCGDeckBuilder",
             "description": "",
             "component": "ptcg-deckbuilder"
         },
         {
             "name" : "Social Saver",
-            "image" : "/images/socialsaver.png",
+            "image" : "/images/fbback.png",
             "github" : "https://github.com/Tishinator/SocialSaver-ui",
             "description": "SocialSaver is a React-based web application with a Django backend, designed to provide an intuitive interface for managing photos via Facebook's API. This application offers seamless integration with Facebook, allowing users to view and download photos directly from their Facebook albums.",
             "component": "social-saver"
         },
         {
             "name" : "Dataset Generator",
-            "image" : "/images/DatasetGen.PNG",
+            "image" : "/images/dataset.png",
             "github" : "https://github.com/Tishinator/Dataset-Generator",
             "description": "The DatasetGenerator.py script is a Python program designed to apply transformations on an image. These transformations will create a dataset from the single image to be used in machine learning. Original project was done for a machine learning project in college, but was branched out for uses on other projects.",
             "component": "dataset-generator"
