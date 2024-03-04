@@ -21,8 +21,8 @@
 .projectsPanel {
     flex-grow: 1;
     padding-top: 10vh;
-    /* padding-left: 12vw; 
-    padding-right: 12vw;  */
+    padding-left: 2vw; 
+    padding-right: 2vw; 
     /* overflow: auto; */
     position: relative;
     /* height: 100vh; */
