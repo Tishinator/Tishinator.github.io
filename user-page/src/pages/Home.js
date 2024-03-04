@@ -20,7 +20,7 @@ function Home() {
         <div className={`${styles.centerPanel}`} style={{ backgroundColor: bkgrd }} id='about-me'>
           <AboutMe />
         </div>
-        <div className={`${styles.centerPanel}`} style={{ backgroundColor: bkgrd }} id='projects'>
+        <div className={`${styles.projectsPanel}`} style={{ backgroundColor: bkgrd }} id='projects'>
           <Projects />
         </div>
       </div>

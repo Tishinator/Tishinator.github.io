@@ -18,6 +18,21 @@
     min-height: 100vh;
 }
 
+.projectsPanel {
+    flex-grow: 1;
+    padding-top: 10vh;
+    /* padding-left: 12vw; 
+    padding-right: 12vw;  */
+    /* overflow: auto; */
+    position: relative;
+    /* height: 100vh; */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    min-height: 100vh;
+}
+
 @media (max-width: 600px) {
 
     .pageContainer {

@@ -77,7 +77,7 @@ const Projects = () => {
                                 <Card.ImgOverlay className={`${styles.overlayStyle} ${hoveredCard === index ? 'bg-hover' : ''}`} >
                                     <Card.Title className={`${styles.titleStyle} ${isDarkMode ? styles.darkTitle : styles.lightTitle}`} >{project.name}</Card.Title>
                                     <Card.Body>
-                                        <Row className={`g-0 ${styles.bottomRow}`}>
+                                        <Row className={`${styles.bottomRow}`}>
                                             <Col>
                                                 <Button variant='primary'
                                                         className={styles.bottomRowButton}
