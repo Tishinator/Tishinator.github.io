@@ -1,74 +1,57 @@
-import { Col, Container, Row, Image, Button } from 'react-bootstrap';
-import appImage from '../../assets/db2.PNG'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
+import appImage from '../../assets/db2.PNG';
+import styles from '../css/ProjectDetail.module.css';
 
 function PTCGSimDeckBuilder() {
-    const bottomSpacing = "mb-1"
-    const textStyle = {
-      fontSize: '1rem'
-    }
-    return(
-        <Container style={textStyle}>
-            <Row className={bottomSpacing}> {/* mb-3 adds margin-bottom for spacing between rows */}
-                <Col xs={12} md={2}> {/* xs=12 makes it full width on small screens, md=4 adjusts size on medium screens */}
-                    Project Type:
-                </Col>
-                <Col xs={12} md={8}>
-                    Web Application
-                </Col>
-            </Row>
+    const techStack = ['React', 'PokemonTCG.io API'];
 
-            <Row className={bottomSpacing}>
-                <Col xs={12} md={2}>
-                    Front-end:
-                </Col>
-                <Col xs={12} md={8}>
-                    React
-                </Col>
-            </Row>
+    return (
+        <div>
+            <div className={styles.techStack}>
+                {techStack.map(tech => (
+                    <span key={tech} className={styles.techPill}>{tech}</span>
+                ))}
+            </div>
 
-            <Row className={bottomSpacing}>
-                <Col xs={6} md={2}>
-                    Back-end:
-                </Col>
-                <Col xs={6} md={4}>
-                    None
-                </Col>
-                <Col xs={6} md={2}>
-                    API's utilized:
-                </Col>
-                <Col xs={6} md={4}>
-                <a href="https://docs.pokemontcg.io/">PokemonTCG.io</a>
-                </Col>
-            </Row>
-            <hr></hr>
-            <Row>
-                <Col>
-                    <Row className={bottomSpacing}>
-                        <Col xs={12}>
-                            <strong>Summary:</strong>
-                        </Col>
-                    </Row>
+            <div className={styles.twoCol}>
+                <div>
+                    <div className={styles.section}>
+                        <div className={styles.sectionLabel}>Summary</div>
+                        <div className={styles.summaryText}>
+                            <p>
+                                The PTCG-Sim Deck Builder is an add-on to the fan-made Pokémon TCG
+                                simulator <a href="https://ptcgsim.online/" target="_blank" rel="noopener noreferrer">ptcgsim.online</a>.
+                                It was built to replace the clunky CSV-based deck creation workflow
+                                with a clean, user-friendly interface.
+                            </p>
+                            <p>
+                                After sharing the project with the PTCG-Sim creator, it was
+                                integrated directly into the simulator and is now used by players
+                                around the world.
+                            </p>
+                        </div>
+                    </div>
+                    <a
+                        className={styles.liveBtn}
+                        href="https://tishinator.github.io/PTCGDeckBuilder/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Live Demo <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+                    </a>
+                </div>
 
-                    <Row className='mb-5'>
-                        <Col xs={12}>
-                            The Pokemon trading card game Simulator (PTCG-SIM) Deck Builder is an add-on to the fan-made simulator <a href="https://ptcgsim.online/">https://ptcgsim.online/</a>.
-                            It was developed in response to the minor annoyances associated with using CSV files for deck creation within the simulator. This add-on simplifies the deck-building process, making it more accessible and user-friendly.
-                            <br></br> <br></br>
-                            After sharing the application with the creator of the PTCG-SIM, they eagerly integrated the application into the simulator, where it is now utilized by players all around the world.
-                        </Col>
-                    </Row>
-                    <Row> 
-                        <Button variant='danger' size='lg' onClick={()=>window.open('https://tishinator.github.io/PTCGDeckBuilder/', '_blank', 'noopener,noreferrer')}>Check it out Live!</Button>
-                    </Row>
-                </Col>
-                <Col>
-                    <Image src={appImage} width={'auto'} height={'500px'} style={{'maxWidth': '85vw', 'object-fit': 'contain'}}rounded />
-                </Col>
-                
-            </Row>
-            
-        </Container>
+                <div className={styles.mediaWrapper} style={{ marginTop: 0 }}>
+                    <img
+                        src={appImage}
+                        alt="PTCG-Sim Deck Builder screenshot"
+                        className={styles.projectImage}
+                    />
+                </div>
+            </div>
+        </div>
     );
-};
+}
 
 export default PTCGSimDeckBuilder;

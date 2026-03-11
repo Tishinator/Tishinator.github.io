@@ -9,7 +9,7 @@ import Projects from '../components/Projects';
 function Home() {
   const { theme } = useContext(AppThemeContext);
   const darkMode = theme === 'dark';
-  let bkgrd = darkMode ? 'black' : 'white';
+  let bkgrd = darkMode ? '#0d1117' : '#f6f8fa';
   
   useDocumentTitle('Tish\'s User Page');
 

@@ -4,7 +4,7 @@
             "name" : "PTCG-Sim Deckbuilder",
             "image" : "/images/PTCGBack.png",
             "github" : "https://github.com/Tishinator/PTCGDeckBuilder",
-            "description": "",
+            "description": "A React app for building and managing Pokémon TCG decks, integrated with PTCG-Sim for testing strategies in the browser.",
             "component": "ptcg-deckbuilder"
         },
         {

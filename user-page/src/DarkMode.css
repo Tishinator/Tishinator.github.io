@@ -1,26 +1,50 @@
-/* dark-theme.css */
+/* Dark theme - GitHub-inspired dark palette */
+.dark-theme {
+  --surface-color: #161b22;
+  --surface-elevated: #21262d;
+  --border-color: #30363d;
+  --text-primary: #e6edf3;
+  --text-muted: #8b949e;
+}
+
 .dark-theme .content {
-    background-color: black;
-    color: white;
-    width: 100%;
-    /* height: 100vh; */
+  background-color: #0d1117;
+  color: #e6edf3;
+  width: 100%;
 }
 
 .dark-theme .navbar {
-    background-color: #333;
-    color: white; 
-  }
-  
+  background-color: #161b22 !important;
+  border-bottom: 1px solid #30363d;
+  color: #e6edf3;
+}
+
 .dark-theme .card {
-  background-color: #333;
-  color: white; 
+  background-color: #21262d;
+  border: 1px solid #30363d;
+  color: #e6edf3;
+}
+
+.dark-theme .accordion-item {
+  background-color: #21262d;
+  border-color: #30363d;
 }
 
 .dark-theme .accordion-button {
-  background-color: #333;
-  color: white; 
+  background-color: #21262d;
+  color: #e6edf3;
 }
 
 .dark-theme .accordion-button::after {
   filter: invert(100%);
+}
+
+.dark-theme .accordion-body {
+  background-color: #21262d;
+  color: #e6edf3;
+}
+
+/* Fix Bootstrap's close button (×) being invisible on dark modal headers */
+.dark-theme .modal .btn-close {
+  filter: invert(1) grayscale(100%) brightness(200%);
 }

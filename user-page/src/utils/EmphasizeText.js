@@ -5,7 +5,7 @@ const EmphasizeText = ({ text, emphasize }) => {
 
     const highlightStyle = {
         fontWeight: 'bold',
-        color: `rgb(255, 0, 128)`
+        color: `#e0185c`
     }
 
     return (

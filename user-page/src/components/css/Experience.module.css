@@ -1,61 +1,160 @@
-/* Experience.module.css */
-
-/* General styles for the accordion that apply at all times */
-.accordionItem {
-    font-size: 0.9rem; /* Adjust base font size */
-}
-
-.accordionBody {
-    padding: 0.5rem 1rem; /* Reduce padding inside the accordion body */
-}
-
-.headerText {
-    font-size: 1rem;
-}
-
-.skillRow {
-    --bs-gutter-x: 0.5rem; /* Adjust horizontal spacing between skill badges */
-    justify-content: flex-end; 
-}
-
-.skillCol {
-    flex: 0 0; 
+.experienceList {
     display: flex;
-    justify-content: flex-end;
-    padding-right: 0.25rem;
-    padding-left: 0.25rem; 
+    flex-direction: column;
 }
 
+.jobItem {
+    position: relative;
+    border-bottom: 1px solid var(--border-color, #d0d7de);
+    padding-left: 3px;
+    transition: padding-left 0.2s ease;
+}
 
-/* Styles for mobile screens */
-@media (max-width: 768px) {
-    .accordionItem {
-        font-size: 0.5rem; /* Further reduce font size for mobile */
+.jobItem:last-child {
+    border-bottom: none;
+}
+
+.jobItem::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: transparent;
+    border-radius: 0 2px 2px 0;
+    transition: background 0.2s ease;
+}
+
+.jobItem:hover::before,
+.jobItemOpen::before {
+    background: var(--accent, #e0185c);
+}
+
+/* ── Header ── */
+.jobHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0.8rem 0.5rem 0.8rem 0.9rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    gap: 1rem;
+    color: inherit;
+}
+
+.jobLeft {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    min-width: 0;
+}
+
+.jobCompany {
+    font-size: 0.88rem;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.jobTitle {
+    font-size: 0.78rem;
+    opacity: 0.6;
+}
+
+.jobRight {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    flex-shrink: 0;
+}
+
+/* ── Skill tags ── */
+.skillTags {
+    display: flex;
+    gap: 0.3rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.skillTag {
+    font-size: 0.67rem;
+    font-weight: 600;
+    padding: 0.15rem 0.55rem;
+    border-radius: 20px;
+    border: 1px solid;
+    white-space: nowrap;
+    letter-spacing: 0.02em;
+}
+
+/* ── Timeframe + chevron ── */
+.timeframe {
+    font-size: 0.7rem;
+    opacity: 0.45;
+    white-space: nowrap;
+}
+
+.chevron {
+    opacity: 0.4;
+    transition: transform 0.25s ease, opacity 0.2s ease;
+    flex-shrink: 0;
+}
+
+.jobItem:hover .chevron,
+.jobItemOpen .chevron {
+    opacity: 0.9;
+}
+
+.chevronOpen {
+    transform: rotate(180deg);
+}
+
+/* ── Body expand/collapse ── */
+.jobBody {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.jobBodyOpen {
+    max-height: 600px;
+}
+
+.jobBodyInner {
+    padding: 0.1rem 0.75rem 1rem 0.9rem;
+    font-size: 0.83rem;
+    line-height: 1.75;
+    opacity: 0.75;
+}
+
+.jobBodyInner ul {
+    margin: 0;
+    padding-left: 1.1rem;
+}
+
+.jobBodyInner li {
+    margin-bottom: 0.3rem;
+}
+
+/* ── Mobile ── */
+@media (max-width: 600px) {
+    .jobHeader {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+        padding: 0.75rem 0.5rem 0.75rem 0.75rem;
     }
 
-    .accordionBody {
-        /* padding: 0.25rem 0.5rem; */
+    .jobRight {
+        width: 100%;
+        justify-content: space-between;
     }
 
-    .headerText {
-        font-size: 0.5rem;
-    }
-
-    .skillBadge {
-        font-size: 0.5rem; /* Adjust skill badge font size for mobile */
-    }
-
-    .skillRow {
-        --bs-gutter-x: 1.5rem; /* Adjust horizontal spacing between skill badges */
-        justify-content: flex-end;
-        padding-right: 2vw; 
-    }
-    
-    .skillCol {
-        flex: 0 0; 
-        display: flex;
-        justify-content: flex-end;
-        padding-right: 0.1rem;
-        padding-left: 0.1rem; 
+    .timeframe {
+        display: none;
     }
 }
