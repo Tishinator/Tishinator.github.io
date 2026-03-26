@@ -1,4 +1,4 @@
-import React, {useState, useEffect, createContext } from "react";
+import React, { useState, useEffect, createContext } from "react";
 
 const AppThemeContext = createContext({
     theme: 'dark',
@@ -6,37 +6,28 @@ const AppThemeContext = createContext({
 });
 
 function ThemeProvider({ children }) {
-    const [theme, setTheme] = useState(
-        localStorage.getItem('theme') === 'dark' || window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
-      );
-      
-       
-        
-    // Toggle between 'light' and 'dark' themes
-    const toggleTheme = () => {
-        console.log('Current theme:', theme);
-        setTheme(prevTheme => {
-          const newTheme = prevTheme === 'light' ? 'dark' : 'light';
-          console.log('New theme:', newTheme);
-          return newTheme;
-        });
-      };
-      
+    const initialTheme =
+        localStorage.getItem('theme') === 'dark' ||
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+            ? 'dark' : 'light';
 
-    useEffect(()=>{
-        // Apply the dark mode class to the body
+    const [theme, setTheme] = useState(initialTheme);
+
+    // Single immediate toggle — CSS transitions on elements + SVG handle all smoothness
+    const toggleTheme = () => {
+        setTheme(prev => prev === 'light' ? 'dark' : 'light');
+    };
+
+    useEffect(() => {
         document.body.className = theme === 'light' ? 'light-theme' : 'dark-theme';
-    
-        // Store the user's preference in localStorage
         localStorage.setItem('theme', theme);
-      },[theme]);
-    
-  
+    }, [theme]);
+
     return (
-      <AppThemeContext.Provider value={{ theme, toggleTheme }}>
-        {children}
-      </AppThemeContext.Provider>
+        <AppThemeContext.Provider value={{ theme, toggleTheme }}>
+            {children}
+        </AppThemeContext.Provider>
     );
-  }
-  
-  export { ThemeProvider, AppThemeContext };
+}
+
+export { ThemeProvider, AppThemeContext };
