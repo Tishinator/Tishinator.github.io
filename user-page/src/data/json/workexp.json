@@ -1,9 +1,16 @@
 {
     "jobs": [
       {
+        "jobTitle": "Sr. Software Engineer in Test",
+        "company": "HiArc",
+        "timeFrame": "2024 - Present",
+        "skillHighlights": ["Python", "Pytest"],
+        "jobDescription": "<ul><li>Designed and implemented automated verification tests using pytest to validate C# API integrations for advanced medical devices.</li><li>Supported regulatory compliance by aligning development and testing activities with FDA standards and IEC 62304 software lifecycle requirements.</li></ul>"
+      },
+      {
         "jobTitle": "Software Engineer III",
         "company": "ENSCO, Inc.",
-        "timeFrame": "2019 - Present",
+        "timeFrame": "2019 - 2024",
         "skillHighlights": ["Python", "VueJS"],
         "jobDescription": "<ul><li>Developed and expanded automated testing using Selenium and integrated them into Jenkins.</li><li>Wrote Python code to improve software projects and addressed security vulnerabilities.</li><li>Led the integration of software projects, including setup of MATLAB and Python environments.</li><li>Participated in software development projects to meet Air Force customer requirements.</li></ul>"
       },

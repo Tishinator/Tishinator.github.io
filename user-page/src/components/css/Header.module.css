@@ -1,3 +1,24 @@
+.separator {
+    color: rgba(230, 237, 243, 0.15);
+    margin: 0 0.85rem;
+    font-weight: 300;
+    vertical-align: middle;
+}
+
+.githubLink {
+    color: rgba(230, 237, 243, 0.45);
+    margin-left: 0;
+    font-size: 1.1rem;
+    vertical-align: middle;
+    transition: color 0.18s ease;
+    text-decoration: none;
+}
+
+.githubLink:hover {
+    color: #e6edf3;
+    text-decoration: none;
+}
+
 .nameText {
     color: var(--accent, #e0185c);
     font-weight: 700;
@@ -10,16 +31,6 @@
     width: 100%;
 }
 
-.themeToggle {
-    margin-left: 1vw;
-    cursor: pointer;
-    opacity: 0.8;
-    transition: opacity 0.2s ease;
-}
-
-.themeToggle:hover {
-    opacity: 1;
-}
 
 @media (max-width: 992px) {
     .nameHeader {
@@ -30,12 +41,7 @@
         flex-direction: row-reverse;
     }
 
-    .themeToggle {
-        margin-left: 0;
-        padding-right: 20px;
-    }
-
-    .navbar-toggler {
+.navbar-toggler {
         order: -1;
     }
 }

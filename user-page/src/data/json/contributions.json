@@ -1,0 +1,10 @@
+{
+    "contributions": [
+        {
+            "repo": "xxmichaellong/ptcg-sim",
+            "summary": "Contributed features and improvements to this open-source Pokémon TCG simulator. Work focused on extending the simulator's integration capabilities, enabling external tooling — including my own deck builder — to interface with the engine.",
+            "github": "https://github.com/xxmichaellong/ptcg-sim",
+            "live": "https://ptcgsim.online/"
+        }
+    ]
+}

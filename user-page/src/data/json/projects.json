@@ -1,25 +1,22 @@
 {
-    "projects":[
+    "projects": [
         {
-            "name" : "PTCG-Sim Deckbuilder",
-            "image" : "/images/PTCGBack.png",
-            "github" : "https://github.com/Tishinator/PTCGDeckBuilder",
-            "description": "A React app for building and managing Pokémon TCG decks, integrated with PTCG-Sim for testing strategies in the browser.",
-            "component": "ptcg-deckbuilder"
+            "name": "PTCG-Sim Deckbuilder",
+            "github": "https://github.com/Tishinator/PTCGDeckBuilder",
+            "description": "A React app for building and managing Pokémon TCG decks, integrated with PTCG-Sim for testing strategies directly in the browser.",
+            "tech": ["React", "JavaScript", "CSS"]
         },
         {
-            "name" : "Social Saver",
-            "image" : "/images/fbback.png",
-            "github" : "https://github.com/Tishinator/SocialSaver-ui",
-            "description": "SocialSaver is a React-based web application with a Django backend, designed to provide an intuitive interface for managing photos via Facebook's API. This application offers seamless integration with Facebook, allowing users to view and download photos directly from their Facebook albums.",
-            "component": "social-saver"
+            "name": "Social Saver",
+            "github": "https://github.com/Tishinator/SocialSaver-ui",
+            "description": "A full-stack web app with a React frontend and Django backend that connects to Facebook's API, letting users view and download photos from their albums.",
+            "tech": ["React", "Django", "Python"]
         },
         {
-            "name" : "Dataset Generator",
-            "image" : "/images/dataset.png",
-            "github" : "https://github.com/Tishinator/Dataset-Generator",
-            "description": "The DatasetGenerator.py script is a Python program designed to apply transformations on an image. These transformations will create a dataset from the single image to be used in machine learning. Original project was done for a machine learning project in college, but was branched out for uses on other projects.",
-            "component": "dataset-generator"
+            "name": "Dataset Generator",
+            "github": "https://github.com/Tishinator/Dataset-Generator",
+            "description": "A Python script that applies image transformations to generate augmented datasets for machine learning. Originally built for a college ML project, later expanded for broader use.",
+            "tech": ["Python"]
         }
     ]
 }
