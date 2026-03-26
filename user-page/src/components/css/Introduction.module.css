@@ -1,120 +1,207 @@
+/* ── Hero container ── */
 .introContainer {
-  position: relative;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
+  align-items: center;
+  background-size: 28px 28px;
+}
+
+.introDark {
+  background-color: #0d1117;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+}
+
+/* ── Left column ── */
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 2rem 0;
+}
+
+/* ── Terminal widget ── */
+.terminal {
+  display: inline-flex;
+  flex-direction: column;
+  border-radius: 8px;
   overflow: hidden;
+  border: 1px solid #30363d;
+  background: #161b22;
+  max-width: 380px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
-.overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.50) 0%,
-    rgba(0, 0, 0, 0.25) 55%,
-    rgba(0, 0, 0, 0.05) 100%
-  );
-  pointer-events: none;
-  z-index: 0;
+.terminalBar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  background: #21262d;
+  border-bottom: 1px solid #30363d;
 }
 
-.userProfileImage {
-  height: 80vh;
-  width: auto;
-  max-width: 50vw;
-  max-height: 80vh;
-  object-fit: contain;
-  bottom: 0;
-  right: 0;
-  left: 76vw;
-  top: 25vh;
-  position: absolute;
-  filter: drop-shadow(0 8px 32px rgba(0, 0, 0, 0.4));
-}
-
-.textBackdrop {
-  /* align-self prevents the flex column from stretching this to full width */
-  align-self: flex-start;
-  /*
-    min-width is sized to the introText ("Hi, I'm Mike") so the backdrop never
-    shrinks when the carousel cycles through shorter items.
-  */
-  min-width: clamp(240px, 28vw, 460px);
-  padding: 1.1rem 1.75rem;
-  border-radius: 14px;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  transition: background 0.7s ease, color 0.5s ease;
-}
-
-.nameText {
-  color: var(--accent, #e0185c);
-  font-weight: 700;
-}
-
-.introText {
-  font-size: clamp(2rem, 4vw, 4rem);
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  line-height: 1.1;
-}
-
-.roleText {
-  font-size: clamp(1rem, 2vw, 1.5rem);
-  font-weight: 400;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+.dot {
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
   opacity: 0.85;
 }
 
-.verticallyCenteredText {
+.terminalBody {
+  padding: 0.85rem 1.1rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  height: 70%;
-  gap: 8px;
+  gap: 4px;
 }
 
-.textContainer {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 25vh;
-  width: 100%;
-  height: 28vh;
-  padding: 0 2rem;
+.terminalLine {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  display: flex;
+  align-items: baseline;
 }
 
-@media (max-width: 600px) {
-  .userProfileImage {
-    left: auto;
-    right: 0;
-    top: 35vh;
-    max-width: 75vw;
-    position: absolute;
+.prompt {
+  color: #e0185c;
+  font-weight: 700;
+  user-select: none;
+}
+
+.command {
+  color: #8b949e;
+}
+
+.output {
+  color: #e6edf3;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+.cursor {
+  display: inline-block;
+  width: 8px;
+  height: 0.9em;
+  background-color: #e6edf3;
+  animation: blink 1s step-start infinite;
+  vertical-align: text-bottom;
+  margin-left: 2px;
+  flex-shrink: 0;
+}
+
+/* ── Hero text ── */
+.heroName {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  margin: 0;
+}
+
+.nameAccent {
+  color: var(--accent, #e0185c);
+}
+
+.heroRole {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-muted, #8b949e);
+  margin: 0;
+}
+
+/* ── CTA row ── */
+.ctaRow {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.65rem 1.4rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-radius: 6px;
+  background-color: var(--accent, #e0185c);
+  color: #ffffff;
+  text-decoration: none;
+  border: 1px solid var(--accent, #e0185c);
+  transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+  font-family: inherit;
+}
+
+.ctaButton:hover {
+  background-color: #c8144f;
+  border-color: #c8144f;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.ctaGhost {
+  background-color: transparent;
+  color: var(--accent, #e0185c);
+}
+
+.introDark .ctaGhost {
+  border-color: #e0185c;
+  color: #e0185c;
+}
+
+.ctaGhost:hover {
+  background-color: var(--accent, #e0185c);
+  color: #ffffff;
+}
+
+/* ── Profile photo ── */
+.profilePhoto {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  border: 3px solid var(--accent, #e0185c);
+  box-shadow: 0 8px 40px rgba(224, 24, 92, 0.25);
+}
+
+/* ── Responsive ── */
+@media (max-width: 767px) {
+  .profilePhoto {
+    width: 160px;
+    height: 160px;
+    margin-top: 1rem;
   }
 
-  .introText {
-    font-size: clamp(1.75rem, 6vw, 2.5rem);
+  .heroContent {
+    padding: 6rem 0 1rem;
+    align-items: flex-start;
   }
 
-  .roleText {
-    font-size: clamp(0.8rem, 3.5vw, 1rem);
+  .terminal {
+    max-width: 100%;
+    width: 100%;
   }
 
-  .textContainer {
-    height: 18vh;
+  .heroName {
+    font-size: clamp(2rem, 10vw, 3rem);
   }
 }
 
 @media (orientation: landscape) and (max-width: 1000px) {
-  .introText {
-    font-size: clamp(1.5rem, 4vw, 2.5rem);
+  .heroName {
+    font-size: clamp(1.75rem, 5vw, 2.75rem);
   }
 
-  .userProfileImage {
-    top: 35vh;
-    left: 79vw;
+  .profilePhoto {
+    height: 80vh;
+    max-height: 480px;
   }
 }
