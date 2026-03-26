@@ -16,3 +16,13 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
+
+/* Gradual color shift when switching themes — applies regardless of which theme is active */
+.content,
+.navbar,
+.card,
+.accordion-item,
+.accordion-button,
+.accordion-body {
+  transition: background-color 0.6s ease, color 0.5s ease, border-color 0.5s ease !important;
+}
