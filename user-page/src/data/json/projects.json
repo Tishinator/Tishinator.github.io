@@ -1,6 +1,12 @@
 {
     "projects": [
         {
+            "name": "Agent Follow Through",
+            "github": "https://github.com/Tishinator/agent-followthrough",
+            "description": "A proactive task follow-up system for AI agents backed by SQLite and cron scheduling, with Telegram notifications for task status updates.",
+            "tech": ["Node.js", "SQLite"]
+        },
+        {
             "name": "PTCG-Sim Deckbuilder",
             "github": "https://github.com/Tishinator/PTCGDeckBuilder",
             "description": "A React app for building and managing Pokémon TCG decks, integrated with PTCG-Sim for testing strategies directly in the browser.",

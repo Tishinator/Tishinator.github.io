@@ -12,10 +12,13 @@ const TECH_COLORS = {
     'Python':     { bg: 'rgba(55, 118, 171, 0.12)',  text: '#3776AB', border: 'rgba(55, 118, 171, 0.3)'  },
     'Django':     { bg: 'rgba(68, 183, 139, 0.12)',  text: '#44B78B', border: 'rgba(68, 183, 139, 0.3)'  },
     'CSS':        { bg: 'rgba(38, 132, 255, 0.12)',  text: '#2684FF', border: 'rgba(38, 132, 255, 0.3)'  },
+    'Node.js':    { bg: 'rgba(104, 160, 99, 0.12)',  text: '#68A063', border: 'rgba(104, 160, 99, 0.3)'  },
+    'SQLite':     { bg: 'rgba(0, 121, 194, 0.12)',   text: '#0079C2', border: 'rgba(0, 121, 194, 0.3)'   },
 };
 const FALLBACK = { bg: 'rgba(150,150,150,0.1)', text: '#8b949e', border: 'rgba(150,150,150,0.25)' };
 
 const PROJECT_ICONS = {
+    'Agent Follow Through': '🦞',
     'PTCG-Sim Deckbuilder': faLayerGroup,
     'Social Saver':         faImages,
     'Dataset Generator':    faFlask,
@@ -39,7 +42,10 @@ const Projects = () => (
                         <div className={styles.cardTop}>
                             {PROJECT_ICONS[project.name] && (
                                 <div className={styles.cardIconBox}>
-                                    <FontAwesomeIcon icon={PROJECT_ICONS[project.name]} className={styles.cardIcon} />
+                                    {typeof PROJECT_ICONS[project.name] === 'string'
+                                        ? <span className={styles.cardIcon}>{PROJECT_ICONS[project.name]}</span>
+                                        : <FontAwesomeIcon icon={PROJECT_ICONS[project.name]} className={styles.cardIcon} />
+                                    }
                                 </div>
                             )}
                             <h3 className={styles.cardTitle}>{project.name}</h3>
